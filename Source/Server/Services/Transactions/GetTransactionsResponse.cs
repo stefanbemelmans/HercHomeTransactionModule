@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TransactionProject.Server.Services.Transactions
+﻿namespace TransactionProject.Server.Services.Transactions
 {
-    public class GetTransactionsResponse
-    {
-        
-    }
+  using System.Collections.Generic;
+  using TransactionProject.Api.Features.Transactions;
+
+  public class GetTransactionsResponse
+  {
+    public List<TransactionsDto> ListOfTransactions { get; set; }
+  }
 }

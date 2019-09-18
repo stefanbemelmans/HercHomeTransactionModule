@@ -8,6 +8,6 @@ namespace TransactionProject.Server.Services.Transactions
 {
     public class GetTransactionsRequest
     {
-        
-    }
+    public int NumberOfTransactions { get; set; } = 10;
+  }
 }

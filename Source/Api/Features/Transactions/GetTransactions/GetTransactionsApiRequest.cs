@@ -10,5 +10,7 @@
     /// The UserName If the User is not already logged in.
     /// </summary>
     //public string UserName { get; set; } = "julie";
+
+    public int NumberOfTransactions { get; set; } = 10;
   }
 }
