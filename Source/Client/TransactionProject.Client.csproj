@@ -9,6 +9,14 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <CodeAnalysisRuleSet>../../TimeWarp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Features\Transactions\Components\TransactionListContainer.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Features\Transactions\Components\TransactionListContainer.razor" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Blazor-State" Version="$(BlazorStateVersion)" />
@@ -23,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Transactions\Actions\Payment\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

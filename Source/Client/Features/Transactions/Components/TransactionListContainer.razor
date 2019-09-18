@@ -1,0 +1,13 @@
+﻿@inherits TransactionListContainerBase
+
+<div class="container bg-primary">
+<h3>Transaction List will be here</h3>
+
+  @foreach(var trans in ListOfTransactions)
+  {
+  <TransactionContainer
+  Amount=var.Amount,
+  ToAddress = var.ToAddress,
+                        TxDate = var.TxDate />
+  }
+</div>
