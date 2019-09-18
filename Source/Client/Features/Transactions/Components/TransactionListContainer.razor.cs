@@ -9,7 +9,7 @@
   {
     IReadOnlyList<TransactionsDto> ListOfTransactions => TransactionState.ListOfTransactions;
 
-    private bool HasPaid { get; set; } = false;
+    
     private uint TotalBalance { get; set; }
   }
 }
