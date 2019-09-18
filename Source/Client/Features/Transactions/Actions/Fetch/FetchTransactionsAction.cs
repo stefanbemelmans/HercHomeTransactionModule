@@ -6,7 +6,8 @@
   {
     public class FetchTransactionsAction : BaseAction 
     {
-      public string UserName { get; set; }
+      // Just in case we need a user name
+      //public string UserName { get; set; }
     }
 
   }

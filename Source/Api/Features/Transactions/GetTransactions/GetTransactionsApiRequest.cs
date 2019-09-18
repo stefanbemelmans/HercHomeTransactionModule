@@ -3,12 +3,12 @@
   using TransactionProject.Api.Features.Base;
   using MediatR;
 
-  public class GetTransactionsRequest : BaseRequest, IRequest<GetTransactionsResponse>
+  public class GetTransactionsApiRequest : BaseRequest, IRequest<GetTransactionsApiResponse>
   {
     public const string Route = "api/transactions";
     /// <summary>
-    /// The Number of days of forecasts to get
+    /// The UserName If the User is not already logged in.
     /// </summary>
-    public string UserName { get; set; } = "julie";
+    //public string UserName { get; set; } = "julie";
   }
 }

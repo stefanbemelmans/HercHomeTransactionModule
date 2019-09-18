@@ -12,6 +12,7 @@
         
     public DateTime TransactionDate { get; set; }
     public string TransactionAmount { get; set; }
+    public string gas { get; set; }
     public string ToAddress { get; set; }
     
   }
