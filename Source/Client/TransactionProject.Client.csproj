@@ -6,17 +6,9 @@
     <RazorLangVersion>3.0</RazorLangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <!--<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <CodeAnalysisRuleSet>../../TimeWarp.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="Features\Transactions\Components\TransactionListContainer.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Features\Transactions\Components\TransactionListContainer.razor" />
-  </ItemGroup>
+  </PropertyGroup>-->
   
   <ItemGroup>
     <PackageReference Include="Blazor-State" Version="$(BlazorStateVersion)" />
@@ -24,14 +16,15 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="$(MicrosoftAspNetCoreBlazorBuildVersion)" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="$(MicrosoftAspNetCoreBlazorHttpClientVersion)" PrivateAssets="all" />
     <!--<PackageReference Include="Microsoft.Extensions.Http" Version="$(MicrosoftExtensionsHttpVersion)" />-->
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersVersion)">
+    <!--<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersVersion)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    </PackageReference>-->
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Transactions\Actions\Payment\" />
+    <Folder Include="Features\Transactions\Actions\Payment\IncreaseTotal\" />
+    <Folder Include="Features\Transactions\Actions\Payment\DecreaseTotal\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

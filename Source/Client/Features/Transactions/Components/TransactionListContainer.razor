@@ -1,13 +1,14 @@
 ﻿@inherits TransactionListContainerBase
+@using TransactionProject.Client.Features.Transactions.Components
 
 <div class="container bg-primary">
-<h3>Transaction List will be here</h3>
-
-  @foreach(var trans in ListOfTransactions)
-  {
-  <TransactionContainer
-  Amount=var.Amount,
-  ToAddress = var.ToAddress,
-                        TxDate = var.TxDate />
-  }
+  <h3>Transaction List will be here</h3>
+  <div class="m-2 bg-success">
+    @foreach (var trans in ListOfTransactions)
+    {
+      <TransactionContainer Amount=var.Amount,
+                            ToAddress=var.ToAddress,
+                            TxDate=var.TxDate />
+    }
+  </div>
 </div>

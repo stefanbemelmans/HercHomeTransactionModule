@@ -1,8 +1,8 @@
-﻿using System;
-using TransactionProject.Client.Features.Base.Components;
-
-namespace TransactionProject.Client.Features.Transactions.Components
+﻿namespace TransactionProject.Client.Features.Transactions.Components
 {
+  using System;
+  using TransactionProject.Client.Features.Base.Components;
+
   public class TransactionContainerBase : BaseComponent
   {
     public uint Amount { get; set; }
