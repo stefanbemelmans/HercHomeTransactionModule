@@ -6,9 +6,10 @@
   <div class="m-2 bg-success">
     @foreach (var trans in ListOfTransactions)
     {
-      <TransactionContainer Amount=var.Amount,
-                            ToAddress=var.ToAddress,
-                            TxDate=var.TxDate />
+      <TransactionComponent Amount = trans.Amount,
+                            ToAddress = trans.ToAddress,
+                            TxDate = trans.TxDate,
+                            TxId = trans.TxId />
     }
   </div>
 </div>

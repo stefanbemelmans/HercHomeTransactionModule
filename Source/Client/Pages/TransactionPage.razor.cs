@@ -4,6 +4,6 @@
 
   public class TransactionPageBase : BaseComponent
   {
-    public const string Route = "/transaction";
+    public const string Route = "/transactions";
   }
 }
