@@ -32,5 +32,18 @@
       //Assert
       getTransactionsResponse.ListOfTransactions.Count.ShouldBe(10);
     }
+
+    public async Task ShouldGetTransactionsFromServerFeatures()
+    {
+      // Arrange
+      var getTransactionsApiRequest = new GetTransactionsApiRequest();
+
+      //Act
+      GetTransactionsApiResponse getTransactionsApiResponse =
+        await Mediator.Send(getTransactionsApiRequest);
+
+      //Assert
+      getTransactionsApiResponse.ListOfTransactions.Count.ShouldBe(10);
+    }
   }
 }
