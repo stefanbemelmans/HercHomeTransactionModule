@@ -1,5 +1,6 @@
 ﻿namespace TransactionProject.Server.Services.Transactions
 {
+  using MediatR;
   using System;
   using System.Collections.Generic;
   using System.Linq;
@@ -8,14 +9,14 @@
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.Transactions;
 
-  public class GetTransactionsHandler
+  public class GetTransactionsHandler : IRequestHandler<GetTransactionsRequest, GetTransactionsResponse>
   {
-    private HttpClient HttpClient { get; set; }
+    //private HttpClient HttpClient { get; set; }
 
-    public GetTransactionsHandler(HttpClient aHttpClient)
-    {
-      HttpClient = aHttpClient;
-    }
+    //public GetTransactionsHandler(HttpClient aHttpClient)
+    //{
+    //  HttpClient = aHttpClient;
+    //}
 
     public async Task<GetTransactionsResponse> Handle
          (
@@ -34,10 +35,10 @@
        (
           new TransactionsDto
           (
-            DateTime.Now.AddDays(aIndex),
-            342 * (aIndex * 100),
-            .0000000194887342,
-            "0xs7s0030384a08642"
+            DateTime.Now, // TX date,
+            342 * (aIndex * 100), // Tx Amount,
+            .0000000194887342, // Tx Gas,
+            "0xs7s0030384a08642" // To Address
           )
         )
       );

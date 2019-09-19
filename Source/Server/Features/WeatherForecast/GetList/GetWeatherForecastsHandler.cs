@@ -8,7 +8,7 @@
   using TransactionProject.Api.Features.WeatherForecast;
   using MediatR;
 
-  public class GetWeatherForecastsHandler : IRequestHandler<GetWeatherForecastRequest, GetWeatherForecastResponse>
+  public class GetWeatherForecastsHandler : IRequestHandler<GeTransactionsRequest, GetWeatherForecastResponse>
   {
     private readonly string[] Summaries = new[]
     {
@@ -26,7 +26,7 @@
 
     public async Task<GetWeatherForecastResponse> Handle
     (
-      GetWeatherForecastRequest aGetWeatherForecastsRequest,
+      GeTransactionsRequest aGetWeatherForecastsRequest,
       CancellationToken aCancellationToken
     )
     {

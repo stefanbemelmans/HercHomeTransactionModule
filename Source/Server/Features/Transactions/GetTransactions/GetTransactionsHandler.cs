@@ -1,12 +1,8 @@
 ﻿namespace TransactionProject.Server.Features.Transactions
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.Transactions;
-  using TransactionProject.Server.Features.Transactions;
   using MediatR;
   using TransactionProject.Server.Services.Transactions;
 
@@ -25,9 +21,11 @@
       CancellationToken aCancellationToken
     )
     {
-      var MockTransactionsResponse =  await Mediator.Send<GetTransactionsResponse>(new GetTransactionsRequest());
-      
-      var mockTransactionsList = new List<TransactionsDto>();
+      var getTransRequest = new GetTransactionsRequest() { NumberOfTransactions = aGetTransactionsApiRequest.NumberOfTransactions };
+
+      GetTransactionsResponse mockTransactionsResponse = await Mediator.Send(getTransRequest);
+
+      return new GetTransactionsApiResponse { ListOfTransactions = mockTransactionsResponse.ListOfTransactions };
      
     }
   }

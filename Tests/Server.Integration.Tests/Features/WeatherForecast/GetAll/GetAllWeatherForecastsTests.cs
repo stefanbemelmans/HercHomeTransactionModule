@@ -22,7 +22,7 @@
     public async Task ShouldGetAllWeatherForecasts()
     {
       // Arrange
-      var getWeatherForecastsRequest = new GetWeatherForecastRequest { Days = 10 };
+      var getWeatherForecastsRequest = new GeTransactionsRequest { Days = 10 };
 
       //Act
       GetWeatherForecastResponse getWeatherForecastsResponse =
