@@ -37,8 +37,8 @@
            new TransactionDto
            (
              DateTime.Now, // TX date,
-             342 * (aIndex * 100), // Tx Amount,
-             .0000000194887342, // Tx Gas,
+             (42 * aIndex) * 10, // Tx Amount,
+             aIndex * 2, // Tx Gas,
              "0xs7s0030384a08642", // To Address
              aIndex // TxId
              )

@@ -13,10 +13,12 @@
       {
       @foreach (var trans in @TransactionState.ListOfTransactions)
       {
-        <TransactionComponent Amount=trans.Amount,
-                              ToAddress=trans.ToAddress,
-                              TxDate=trans.TxDate,
-                              TxId=trans.TxId />
+        <TransactionComponent Gas="trans.Gas"
+                              ToAddress="trans.ToAddress"
+                              TransactionAmount="trans.TransactionAmount"
+                              TxDate="trans.TxDate"
+                              TxId="trans.TxId"
+                              />
       }
       }
     </div>
