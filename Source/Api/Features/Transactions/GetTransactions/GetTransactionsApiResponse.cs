@@ -11,6 +11,6 @@
     /// </summary>
     public GetTransactionsApiResponse() { }
 
-    public List<TransactionsDto> ListOfTransactions { get; set; }
+    public List<TransactionDto> ListOfTransactions { get; set; }
   }
 }

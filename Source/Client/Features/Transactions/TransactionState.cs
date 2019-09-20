@@ -6,13 +6,13 @@
 
   internal partial class TransactionState : State<TransactionState>
   {
-    private List<TransactionsDto> _ListOfTransactions;
+    private List<TransactionDto> _ListOfTransactions;
 
-    public IReadOnlyList<TransactionsDto> ListOfTransactions => _ListOfTransactions.AsReadOnly();
+    public List<TransactionDto> ListOfTransactions => _ListOfTransactions;
 
     public TransactionState()
     {
-      _ListOfTransactions = new List<TransactionsDto>();
+      _ListOfTransactions = new List<TransactionDto>();
     }
     
     public uint TotalBalance { get; set; }

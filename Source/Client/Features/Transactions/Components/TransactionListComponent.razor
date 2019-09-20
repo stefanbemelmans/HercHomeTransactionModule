@@ -1,0 +1,24 @@
+﻿@inherits TransactionListComponentBase
+
+<div class="container bg-primary">
+  <h1>Transaction List Component</h1>
+  <h3>Transaction List will be here</h3>
+  @if (TransactionState.ListOfTransactions.Count == 0)
+  {
+    <h3>Loading Transactions...allegedly...</h3>
+  }
+  else
+  {
+    <div class="m-2 bg-danger">
+      {
+      @foreach (var trans in @TransactionState.ListOfTransactions)
+      {
+        <TransactionComponent Amount=trans.Amount,
+                              ToAddress=trans.ToAddress,
+                              TxDate=trans.TxDate,
+                              TxId=trans.TxId />
+      }
+      }
+    </div>
+  }
+</div>

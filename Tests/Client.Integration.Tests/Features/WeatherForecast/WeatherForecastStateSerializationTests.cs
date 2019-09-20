@@ -5,7 +5,7 @@
   using TransactionProject.Api.Features.WeatherForecast;
   using System.Text.Json;
 
-  internal class WeatherForecastStateSerializationTests
+  internal class TransactionStateSerializationTests
   {
 
     public class Person

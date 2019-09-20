@@ -21,7 +21,7 @@
       CancellationToken aCancellationToken
     )
     {
-      var getTransRequest = new GetTransactionsRequest() { NumberOfTransactions = aGetTransactionsApiRequest.NumberOfTransactions };
+      var getTransRequest = new GetTransactionsRequest() { NumberOfTransactions = 10 };
 
       GetTransactionsResponse mockTransactionsResponse = await Mediator.Send(getTransRequest);
 

@@ -8,8 +8,10 @@
   /// </summary>
   /// <remarks>TODO: This should be an immutable class
   /// but serialization doesn't work with no setter or private setter yet</remarks>
-  public class TransactionsDto
+  public class TransactionDto
   {
+
+    public TransactionDto() { }
     public double Gas { get; set; }
 
     public string ToAddress { get; set; }
@@ -20,7 +22,7 @@
 
     public int TxId { get; set; }
 
-    public TransactionsDto(DateTime aDateTime, BigInteger aTransactionAmount, double aGas, string aToAddress, int aTxId)
+    public TransactionDto(DateTime aDateTime, BigInteger aTransactionAmount, double aGas, string aToAddress, int aTxId)
     {
       TransactionDate = aDateTime;
       TransactionAmount = aTransactionAmount;

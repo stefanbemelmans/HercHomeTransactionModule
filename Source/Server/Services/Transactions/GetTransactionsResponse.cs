@@ -7,8 +7,8 @@
   {
     public GetTransactionsResponse()
     {
-      ListOfTransactions = new List<TransactionsDto>();
+      ListOfTransactions = new List<TransactionDto>();
     }
-    public List<TransactionsDto> ListOfTransactions { get; set; }
+    public List<TransactionDto> ListOfTransactions { get; set; }
   }
 }
