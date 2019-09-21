@@ -10,9 +10,11 @@
 
     public List<TransactionDto> ListOfTransactions => _ListOfTransactions;
 
+    public List<TransactionDto> TransactionsToPay { get; set; }
     public TransactionState()
     {
       _ListOfTransactions = new List<TransactionDto>();
+      TransactionsToPay = new List<TransactionDto>();
     }
     
     public int TotalBalance { get; set; }
