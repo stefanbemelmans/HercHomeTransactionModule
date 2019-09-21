@@ -4,9 +4,9 @@
 
   internal partial class TransactionState
   {
-    public class DecreaseTotalAction : BaseAction
+    public class DeSelectTransactionAction : BaseAction
     {
-      public int Amount { get; set; }
+      public int TxId { get; set; }
     }
   }
 }

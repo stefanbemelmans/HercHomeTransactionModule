@@ -42,7 +42,7 @@
       _ = await Mediator.Send(decreaseRequest);
 
       // Assert
-      TransactionState.TotalBalance.ShouldBe(0);
+      TransactionState.TotalBalance.ShouldBe(-200);
     }
 
   }
