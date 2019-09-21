@@ -1,16 +1,18 @@
 ﻿@inherits TransactionComponentBase
 
-<div id="transaction" @onclick="OnClicked" class="bg-secondary p-2 m-2">
-  <h3>Transaction Date:</h3> <h4>@TxDate</h4>
-  <h3>To Address:</h3> <h4>@ToAddress</h4>
-  <h3>Transaction Amount:</h3> <h4>@TransactionAmount</h4>
-  <h3>Transaction Gas: </h3> <h4>@Gas</h4>
+
+<div id="@TxId" @onclick="OnClicked" class="row p-2 m-2">
+  
+  <div class="col"><h3>Transaction Date:</h3> <h4>9/20/2019 10:15:20 PM</h4></div>
+  <div class="col"><h3>To Address:</h3> <h4>trans.ToAddress</h4></div>
+  <div class="col"><h3>Amount:</h3> <h4>420</h4></div>
+  <div class="col"><h3>Gas: </h3> <h4>2</h4></div>
 </div>
 
 @if (IsClicked == true)
 {
   <style>
-    #transaction {
+    #@TxId {
       background-color: blue;
     }
   </style>
