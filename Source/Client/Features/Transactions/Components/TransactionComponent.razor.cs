@@ -21,7 +21,8 @@
 
     [Parameter]
     public int TxId { get; set; }
-    public bool IsClicked { get; set; }
+    public bool IsClicked { get; set; } 
+    public string BackgroundColor { get; set; }
 
     private bool HasSubtracted { get; set; } = false;
 
@@ -33,9 +34,10 @@
         Console.WriteLine("Has Subtracted: " + HasSubtracted);
         Console.WriteLine("Add TX Amount To Total: " + TransactionAmount);
         Console.WriteLine("IsClicked: " + IsClicked);
-        Mediator.Send(new IncreaseTotalAction { Amount = TransactionAmount });
+        //Mediator.Send(new IncreaseTotalAction { Amount = TransactionAmount });
         HasSubtracted = !HasSubtracted;
         IsClicked = !IsClicked;
+        BackgroundColor = "#E0EEEE";
       }
       else
       {
@@ -43,9 +45,10 @@
         Console.WriteLine("Has Subtracted: " + HasSubtracted);
         Console.WriteLine("Subtract TX Amount From Total: " + TransactionAmount);
         Console.WriteLine("IsClicked: " + IsClicked);
-        Mediator.Send(new DecreaseTotalAction { Amount = TransactionAmount });
+        //Mediator.Send(new DecreaseTotalAction { Amount = TransactionAmount });
         HasSubtracted = !HasSubtracted;
         IsClicked = !IsClicked;
+        BackgroundColor = "#AEEEEE"	;
       }
     }
   }
