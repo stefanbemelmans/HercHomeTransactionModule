@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TransactionProject.Client.Features.Base;
 
-namespace TransactionProject.Client.Features.Transactions.Actions.Payment.IncreaseTotal
-{
+namespace TransactionProject.Client.Features.Transactions.Actions.Payment
+{ 
   internal partial class TransactionState
   {
     public class IncreaseTotalAction : BaseAction

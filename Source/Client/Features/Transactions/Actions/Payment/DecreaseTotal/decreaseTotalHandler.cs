@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TransactionProject.Client.Features.Base;
 
-namespace TransactionProject.Client.Features.Transactions.Actions.Payment.DecreaseTotal
+namespace TransactionProject.Client.Features.Transactions.Actions.Payment
 {
   internal partial class TransactionState
   {
