@@ -15,7 +15,7 @@
       _ListOfTransactions = new List<TransactionDto>();
     }
     
-    public uint TotalBalance { get; set; }
+    public int TotalBalance { get; set; }
     protected override void Initialize() => TotalBalance = 0;
   }
 }

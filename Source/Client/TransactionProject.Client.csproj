@@ -23,8 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Transactions\Actions\Payment\IncreaseTotal\" />
-    <Folder Include="Features\Transactions\Actions\Payment\DecreaseTotal\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
