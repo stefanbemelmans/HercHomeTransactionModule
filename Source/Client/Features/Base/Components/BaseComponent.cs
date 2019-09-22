@@ -22,7 +22,6 @@
     internal CounterState CounterState => GetState<CounterState>();
     internal EventStreamState EventStreamState => GetState<EventStreamState>();
     internal WeatherForecastsState WeatherForecastsState => GetState<WeatherForecastsState>();
-
     internal TransactionState TransactionState => GetState<TransactionState>();
   }
 }

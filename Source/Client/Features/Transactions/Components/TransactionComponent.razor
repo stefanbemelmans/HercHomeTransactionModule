@@ -1,0 +1,13 @@
+﻿@inherits TransactionComponentBase
+
+
+<div id="@TxId" @onclick="OnClicked" class="row p-2 m-2" style="background-color: @BackgroundColor">
+  
+  <div class="col"><h3>Transaction Date:</h3> <h4>@TxDate</h4></div>
+  <div class="col"><h3>To Address:</h3> <h4>@ToAddress</h4></div>
+  <div class="col"><h3>Amount:</h3> <h4>@TransactionAmount</h4></div>
+  <div class="col"><h3>Gas: </h3> <h4>@Gas</h4></div>
+</div>
+
+
+

@@ -20,7 +20,7 @@
 
     protected EventStreamState EventStreamState => Store.GetState<EventStreamState>();
 
-    protected Transactions.TransactionState TransactionState => Store.GetState<TransactionState>();
+    protected TransactionState TransactionState => Store.GetState<TransactionState>();
 
     protected WeatherForecastsState WeatherForecastsState => Store.GetState<WeatherForecastsState>();
 

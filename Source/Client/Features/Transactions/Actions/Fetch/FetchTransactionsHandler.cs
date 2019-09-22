@@ -26,10 +26,10 @@
         CancellationToken aCancellationToken
       )
       {
-        var getTransactionsRequest = new GetTransactionsRequest();
-        GetTransactionsResponse getTransactionsResponse =
-          await HttpClient.PostJsonAsync<GetTransactionsResponse>(GetTransactionsRequest.Route, getTransactionsRequest);
-        TransactionState._ListOfTransactions = getTransactionsResponse.ListOfTransactions;
+        var getTransactionsApiRequest = new GetTransactionsApiRequest { NumberOfTransactions = aFetcTransactionsAction.NumberOfTransactions };
+        GetTransactionsApiResponse getTransactionsApiResponse =
+          await HttpClient.PostJsonAsync<GetTransactionsApiResponse>(GetTransactionsApiRequest.Route, getTransactionsApiRequest);
+        TransactionState._ListOfTransactions = getTransactionsApiResponse.ListOfTransactions;
         return Unit.Value;
       }
     }
