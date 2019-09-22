@@ -1,20 +1,27 @@
 ﻿@inherits TransactionBalanceComponentBase
 
-<div id="totalBalance" class="p-2 m-2 text-center">
-
-  <h3>Balance To Pay: </h3>
-  <h4>@TotalBalance</h4>
-  <h3>Transactions To Pay</h3>
-  <h4>@TotalCount</h4>
+<div id="totalBalance" class="p-2 m-2">
+  <div class="p-2 m-2">
+    <text class="font-weight-bold m-2">Balance To Pay:</text> <text>@TotalBalance</text>
+    <text class="font-weight-bold m-2">Transactions To Pay</text> <text>@TransactionsToPay.Count</text>
+  </div>
 
   @foreach (var trans in @TransactionState.TransactionsToPay)
   {
-    <TransactionComponent Gas="trans.Gas"
-                          ToAddress="trans.ToAddress"
-                          TransactionAmount="trans.TransactionAmount"
-                          TxDate="trans.TxDate"
-                          TxId="trans.TxId" />
+    <div class="flex-column p-2 m-2">
+      <div class="flex-row p-2">
+        Tx Id:
+        <span class="font-weight-bold"> @trans.TxId </span>
+
+        Tx Date:<span class="font-weight-bold"> @trans.TxDate </span>
+      </div>
+      <div class="flex-row p-2">
+        To Address:
+        <span class="font-weight-bold">
+          @trans.ToAddress
+        </span>
+        Amount:<span class="font-weight-bold"> @trans.TransactionAmount</span>
+      </div>
+    </div>
   }
-
-
 </div>
