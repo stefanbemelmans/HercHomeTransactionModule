@@ -10,13 +10,13 @@
   using static TransactionProject.Client.Features.Transactions.Actions.Payment.TransactionState;
   using TransactionProject.Client.Features.Transactions;
 
-  internal class SelectTransactionTests
+  internal class AddingTxAmountTests
   {
     private readonly IMediator Mediator;
     private readonly IServiceProvider ServiceProvider;
     private readonly IStore Store;
     private TransactionState TransactionState => Store.GetState<TransactionState>();
-    public SelectTransactionTests(TestFixture aTestFixture)
+    public AddingTxAmountTests(TestFixture aTestFixture)
     {
       ServiceProvider = aTestFixture.ServiceProvider;
       Mediator = ServiceProvider.GetService<IMediator>();
@@ -44,6 +44,7 @@
       // Assert
       TransactionState.TotalBalance.ShouldBe(-200);
     }
+
 
   }
 }

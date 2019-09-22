@@ -1,23 +1,25 @@
 ﻿namespace TransactionProject.Client.Features.Transactions
 {
+  using BlazorState;
   using System.Collections.Generic;
   using TransactionProject.Api.Features.Transactions;
-  using BlazorState;
 
   internal partial class TransactionState : State<TransactionState>
   {
-    private List<TransactionDto> _ListOfTransactions;
+    //private List<TransactionDto> _ListOfTransactions;
 
-    public List<TransactionDto> ListOfTransactions => _ListOfTransactions;
+    //public List<TransactionDto> ListOfTransactions => _ListOfTransactions;
+    public List<TransactionDto> ListOfTransactions { get; set; }
 
+    public int TotalBalance { get; set; }
     public List<TransactionDto> TransactionsToPay { get; set; }
+
     public TransactionState()
     {
-      _ListOfTransactions = new List<TransactionDto>();
+      ListOfTransactions = new List<TransactionDto>();
       TransactionsToPay = new List<TransactionDto>();
     }
-    
-    public int TotalBalance { get; set; }
+
     protected override void Initialize() => TotalBalance = 0;
   }
 }

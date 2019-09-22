@@ -2,6 +2,16 @@
 
 <div id="totalBalance" class="p-2 m-2 text-center">
 
-<h3>Balance To Pay: </h3> <h4>@TransactionState.TotalBalance</h4>
-</div>
+  <h3>Balance To Pay: </h3> <h4>@TransactionState.TotalBalance</h4>
 
+  <h3>Transactions To Pay</h3>
+  @foreach (var trans in @TransactionState.TransactionsToPay)
+  {
+    <TransactionComponent Gas="trans.Gas"
+                          ToAddress="trans.ToAddress"
+                          TransactionAmount="trans.TransactionAmount"
+                          TxDate="trans.TxDate"
+                          TxId="trans.TxId" />
+  }
+  }
+</div>

@@ -7,9 +7,13 @@
 
   public class TransactionComponentBase : BaseComponent
   {
+    public string BackgroundColor => IsClicked ? "#AEEEEE" : "#E0EEEE";
+
     [Parameter]
     public int Gas { get; set; }
-    
+
+    public bool IsClicked { get; set; }
+
     [Parameter]
     public string ToAddress { get; set; }
 
@@ -21,34 +25,32 @@
 
     [Parameter]
     public int TxId { get; set; }
-    public bool IsClicked { get; set; } 
-    public string BackgroundColor { get; set; }
 
-    private bool HasSubtracted { get; set; } = false;
+    //private bool HasSubtracted { get; set; } = false;
 
     public void OnClicked()
     {
-      if (HasSubtracted == true)
+      if (IsClicked == true)
       {
-        //Send AddTxValue
-        Console.WriteLine("Has Subtracted: " + HasSubtracted);
-        Console.WriteLine("Add TX Amount To Total: " + TransactionAmount);
         Console.WriteLine("IsClicked: " + IsClicked);
-        //Mediator.Send(new IncreaseTotalAction { Amount = TransactionAmount });
-        HasSubtracted = !HasSubtracted;
+        Console.WriteLine("Remove TX Amount From TotalBalance: " + TransactionAmount);
+        Mediator.Send(new DecreaseTotalAction { Amount = TransactionAmount });
+        Mediator.Send(new DeSelectTransactionAction { TxId = TxId });
+
         IsClicked = !IsClicked;
-        BackgroundColor = "#E0EEEE";
+        Console.WriteLine("IsClicked after methods: " + IsClicked);
+        Console.WriteLine("Total: " + TransactionState.TotalBalance);
       }
       else
       {
         // Send SubtractTxValue
-        Console.WriteLine("Has Subtracted: " + HasSubtracted);
-        Console.WriteLine("Subtract TX Amount From Total: " + TransactionAmount);
+        Console.WriteLine("Add TX Amount To TotalBalance: " + TransactionAmount);
         Console.WriteLine("IsClicked: " + IsClicked);
-        //Mediator.Send(new DecreaseTotalAction { Amount = TransactionAmount });
-        HasSubtracted = !HasSubtracted;
+        Mediator.Send(new IncreaseTotalAction { Amount = TransactionAmount });
+        Mediator.Send(new SelectTransactionAction { TxId = TxId });
         IsClicked = !IsClicked;
-        BackgroundColor = "#AEEEEE"	;
+        Console.WriteLine("IsClicked after methods: " + IsClicked);
+        Console.WriteLine("Total: " + TransactionState.TotalBalance);
       }
     }
   }

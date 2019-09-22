@@ -19,7 +19,7 @@
         CancellationToken aCancellationToken
       )
       {
-        TransactionDto deSelectedTransaction = TransactionState.ListOfTransactions.(aDto => aDto.TxId == aSelectTransactionAction.TxId);
+        TransactionDto deSelectedTransaction = TransactionState.ListOfTransactions.Find(aDto => aDto.TxId == aDeSelectTransactionAction.TxId);
         TransactionState.TransactionsToPay.Remove(deSelectedTransaction);
         return Unit.Task;
       }

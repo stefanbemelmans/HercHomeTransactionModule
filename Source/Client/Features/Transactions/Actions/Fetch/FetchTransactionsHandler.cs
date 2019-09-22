@@ -29,7 +29,7 @@
         var getTransactionsApiRequest = new GetTransactionsApiRequest { NumberOfTransactions = aFetcTransactionsAction.NumberOfTransactions };
         GetTransactionsApiResponse getTransactionsApiResponse =
           await HttpClient.PostJsonAsync<GetTransactionsApiResponse>(GetTransactionsApiRequest.Route, getTransactionsApiRequest);
-        TransactionState._ListOfTransactions = getTransactionsApiResponse.ListOfTransactions;
+        TransactionState.ListOfTransactions = getTransactionsApiResponse.ListOfTransactions;
         return Unit.Value;
       }
     }
