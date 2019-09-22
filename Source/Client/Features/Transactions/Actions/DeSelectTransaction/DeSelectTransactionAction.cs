@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Client.Features.Transactions.Actions.Payment
+﻿namespace TransactionProject.Client.Features.Transactions
 {
   using TransactionProject.Client.Features.Base;
 

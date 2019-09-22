@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Client.Features.Transactions.Actions.Payment
+﻿namespace TransactionProject.Client.Features.Transactions
 {
   using BlazorState;
   using MediatR;
@@ -19,8 +19,8 @@
         CancellationToken aCancellationToken
       )
       {
-        TransactionDto selectedTransaction = TransactionState.ListOfTransactions.Find(aDto => aDto.TxId == aSelectTransactionAction.TxId);
-        TransactionState.TransactionsToPay.Add(selectedTransaction);
+        TransactionDto selectedTransaction = TransactionState._ListOfTransactions.Find(aDto => aDto.TxId == aSelectTransactionAction.TxId);
+        TransactionState._TransactionsToPay.Add(selectedTransaction);
         return Unit.Task;
       }
     }
