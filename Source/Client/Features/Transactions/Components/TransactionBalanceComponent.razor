@@ -3,11 +3,12 @@
 <div id="totalBalance" class="p-2 m-2">
   <div class="p-2 m-2">
     <text class="font-weight-bold m-2">Balance To Pay:</text> <text>@TotalBalance</text>
-    <text class="font-weight-bold m-2">Transactions To Pay</text> <text>@TransactionsToPay.Count</text>
+    <text class="font-weight-bold m-2 mb-2">Transactions To Pay</text> <text>@TransactionsToPay.Count</text>
     @if (TransactionsToPay.Count > 0)
-    {
-      <button class="btn btn-primary" @onclick="PayAll">Pay All</button>
-      <button class="btn btn-primary" @onclick="PaySelected">Pay Selected</button>
+    {<div>
+        <button class="btn btn-primary" @onclick="PayAll">Pay All</button>
+        <button class="btn btn-primary" @onclick="PaySelected">Pay Selected</button>
+      </div>
     }
   </div>
 
