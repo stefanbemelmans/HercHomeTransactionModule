@@ -32,7 +32,7 @@
     public string Name { get; set; }
 
     /// <summary>
-    /// a Regular Expression that values in a Metric associated to this MetricDefentiion
+    /// a Regular Expression that values in a Metric associated to this MetricDefinition
     /// have to match. 
     /// </summary>
     public string Regex { get; set; }

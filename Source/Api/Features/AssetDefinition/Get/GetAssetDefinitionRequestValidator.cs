@@ -2,9 +2,9 @@
 {
   using FluentValidation;
 
-  public class GetAssetDefinitionRequestValidator : AbstractValidator<GetAssetDefinitionRequest>
+  public class GetAssetDefinitionRequestValidatorCollection : AbstractValidator<GetAssetDefinitionRequest>
   {
-    public GetAssetDefinitionRequestValidator()
+    public GetAssetDefinitionRequestValidatorCollection()
     {
       RuleFor(aGetAssetDefinitionRequest => aGetAssetDefinitionRequest.AssetDefinitionId).GreaterThan(0);
     }

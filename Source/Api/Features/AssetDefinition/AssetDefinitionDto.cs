@@ -3,7 +3,7 @@
   using System;
   using System.Collections.Generic;
 
-  public class AssetDefinitionDto : ICloneable
+  public class AssetDefinitionDto 
   {
     public AssetDefinitionDto()
     {

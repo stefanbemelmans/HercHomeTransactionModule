@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TransactionProject.Api.Services.HerculesApi
+﻿namespace TransactionProject.Api.Services.HerculesApi
 {
-  class Endpoints
+  using System.Net.Http;
+
+  class HerculesApiHttpClient : HttpClient
   {
-    public string CreateAsset = http://api.herc.one/assets/create?api_key=[*insert key here*] \
+    public string BaseUrl = "http://api.herc.one/assets/";
+   
+    public HerculesApiHttpClient()
+    {
+      BaseAddress = new System.Uri(BaseUrl);
+    }
   }
 }
