@@ -1,7 +1,7 @@
-﻿namespace Herc.Pwa.Shared.Features.AssetDefinition
+﻿namespace TransactionProject.Api.Features.AssetDefinition
 {
   using System;
-  using Herc.Pwa.Shared.Features.Base;
+  using TransactionProject.Api.Features.Base;
 
   public class CreateAssetDefinitionResponse : BaseResponse
   {

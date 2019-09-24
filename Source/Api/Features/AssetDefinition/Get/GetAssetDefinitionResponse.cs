@@ -1,6 +1,6 @@
-﻿namespace Herc.Pwa.Shared.Features.AssetDefinition
+﻿namespace TransactionProject.Api.Features.AssetDefinition
 {
-  using Herc.Pwa.Shared.Features.Base;
+  using TransactionProject.Api.Features.Base;
   using System;
 
   /// <summary>

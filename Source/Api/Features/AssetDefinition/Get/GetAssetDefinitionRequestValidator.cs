@@ -1,4 +1,4 @@
-﻿namespace Herc.Pwa.Shared.Features.AssetDefinition
+﻿namespace TransactionProject.Api.Features.AssetDefinition
 {
   using FluentValidation;
 
