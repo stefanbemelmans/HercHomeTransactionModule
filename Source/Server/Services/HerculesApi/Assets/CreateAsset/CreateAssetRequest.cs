@@ -1,8 +1,9 @@
 ﻿namespace TransactionProject.Server.Services.HerculesApi
 {
+  using MediatR;
   using System.Collections.Generic;
 
-  public class CreateAssetRequest
+  public class CreateAssetRequest : IRequest<CreateAssetResponse>
   {
     public string AssetName { get; set; }
     public byte[] Logo { get; set; }
