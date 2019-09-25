@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Api.Features.AssetDefinition
+﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using MediatR;
   using TransactionProject.Api.Features.Base;

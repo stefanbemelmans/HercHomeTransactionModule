@@ -1,7 +1,7 @@
 ﻿using TransactionProject.Api.Features.Base;
 using MediatR;
 
-namespace TransactionProject.Api.Features.AssetDefinition
+namespace TransactionProject.Api.Features.JuliesApi
 {
   /// <summary>
   /// Get an AssetDefinition by ID

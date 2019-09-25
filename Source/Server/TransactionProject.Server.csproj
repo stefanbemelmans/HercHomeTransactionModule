@@ -17,4 +17,9 @@
     <ProjectReference Include="..\Client\TransactionProject.Client.csproj" />
     <ProjectReference Include="..\Api\TransactionProject.Api.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\JuliesApi\Assets\MakeAssetTransaction\" />
+    <Folder Include="Services\JuliesApi\Assets\GetAssetTransaction\" />
+  </ItemGroup>
 </Project>

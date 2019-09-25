@@ -1,12 +1,12 @@
-﻿namespace TransactionProject.Api.Services.HerculesApi
+﻿namespace TransactionProject.Api.Services.JuliesApi
 {
   using System.Net.Http;
 
-  class HerculesApiHttpClient : HttpClient
+  class JuliesApiHttpClient : HttpClient
   {
     public string BaseUrl = "http://api.herc.one/assets/";
    
-    public HerculesApiHttpClient()
+    public JuliesApiHttpClient()
     {
       BaseAddress = new System.Uri(BaseUrl);
     }

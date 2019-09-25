@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Api.Features.Transactions
+﻿namespace TransactionProject.Api.Features.PendingTransactions
 {
   using System;
 
