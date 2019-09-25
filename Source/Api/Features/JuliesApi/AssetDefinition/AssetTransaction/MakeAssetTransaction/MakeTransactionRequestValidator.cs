@@ -8,7 +8,7 @@
     {
       RuleFor(aMakeTransactionDefinitionRequest => aMakeTransactionDefinitionRequest.AssetDefinitionDto)
         .SetValidator(new AssetTransactionDtoValidatorColl());
-      RuleFor(aCreateAssetDefinitionRequest => aCreateAssetDefinitionRequest.AssetDefinitionDto)
+      RuleFor(aCreateAssetDefRequest => aCreateAssetDefRequest.AssetDefinitionDto)
         .NotNull();
     }
   }

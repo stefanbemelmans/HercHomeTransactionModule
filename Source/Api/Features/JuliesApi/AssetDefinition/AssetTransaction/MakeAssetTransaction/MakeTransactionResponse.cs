@@ -3,10 +3,10 @@
   using System;
   using TransactionProject.Api.Features.Base;
 
-  public class CreateAssetDefinitionResponse : BaseResponse
+  public class CreateAssetDefResponse : BaseResponse
   {
-    public CreateAssetDefinitionResponse() { }
-    public CreateAssetDefinitionResponse(Guid aRequestId) : base(aRequestId) { }
+    public CreateAssetDefResponse() { }
+    public CreateAssetDefResponse(Guid aRequestId) : base(aRequestId) { }
     public AssetDefinitionDto AssetDefinition { get; set; }
   }
 }

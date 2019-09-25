@@ -14,11 +14,7 @@
 
     public int TxId { get; set; }
 
-
-
-    public TransactionDto() { }
-
-    public TransactionDto(DateTime aDateTime, int aTransactionAmount, int aGas, string aToAddress, int aTxId)
+    public PendingTransactionDto(DateTime aDateTime, int aTransactionAmount, int aGas, string aToAddress, int aTxId)
     {
       TxDate = aDateTime;
       TransactionAmount = aTransactionAmount;
