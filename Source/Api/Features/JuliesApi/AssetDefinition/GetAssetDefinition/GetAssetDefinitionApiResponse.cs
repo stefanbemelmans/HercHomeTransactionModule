@@ -6,11 +6,11 @@
   /// <summary>
   /// Returns the AssetDefinitionDto if found
   /// </summary>
-  public class GetAssetDefinitionResponse : BaseResponse
+  public class GetAssetDefinitionApiResponse : BaseResponse
   {
-    public GetAssetDefinitionResponse() { }
+    public GetAssetDefinitionApiResponse() { }
 
-    public GetAssetDefinitionResponse(Guid aRequestId) : base(aRequestId) { }
+    public GetAssetDefinitionApiResponse(Guid aRequestId) : base(aRequestId) { }
 
     /// <summary>
     /// The AssetDefintion requested if found else null.

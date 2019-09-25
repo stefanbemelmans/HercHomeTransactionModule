@@ -2,7 +2,7 @@
 {
   using FluentValidation;
 
-  public class CreateAssetDefRequestValidatorCollection : AbstractValidator<CreateAssetDefRequest>
+  public class CreateAssetDefRequestValidatorCollection : AbstractValidator<CreateAssetDefinitionApiRequest>
   {
     public CreateAssetDefRequestValidatorCollection()
     {

@@ -3,7 +3,7 @@
   using MediatR;
   using TransactionProject.Api.Features.Base;
 
-  public class CreateAssetDefRequest : BaseRequest, IRequest<CreateAssetDefResponse>
+  public class CreateAssetDefinitionApiRequest : BaseRequest, IRequest<CreateAssetDefintionApiResponse>
   {
     public const string ApiKey = "magicApiKey";
     public const string CreateAssetEndpoint = "create?api_key=";

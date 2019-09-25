@@ -22,7 +22,7 @@
        CancellationToken aCancellationToken
      )
     {
-      var AssetDefCreateResponse = await JuliesApiHttpClient.SendJsonAsync(Api.Features.JuliesApi.CreateAssetDefinitionRequest.CreateAssetEndpoint + )
+      var AssetDefCreateResponse = await JuliesApiHttpClient.SendAsync(Api.Features.JuliesApi.CreateAssetDefinitionRequest.CreateAssetEndpoint + )
     }
   }
 }

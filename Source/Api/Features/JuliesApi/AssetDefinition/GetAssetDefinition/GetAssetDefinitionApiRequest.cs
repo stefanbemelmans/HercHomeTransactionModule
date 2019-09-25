@@ -6,7 +6,7 @@ namespace TransactionProject.Api.Features.JuliesApi
   /// <summary>
   /// Get an AssetDefinition by ID
   /// </summary>
-  public class GetAssetDefinitionRequest: BaseRequest, IRequest<GetAssetDefinitionResponse>
+  public class GetAssetDefinitionApiRequest: BaseRequest, IRequest<GetAssetDefinitionApiResponse>
   {
     public const string Route = "api/GetAssetDefinition";
 

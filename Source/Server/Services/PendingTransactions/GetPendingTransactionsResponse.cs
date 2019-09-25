@@ -7,8 +7,8 @@
   {
     public GetPendingTransactionsResponse()
     {
-      ListOfTransactions = new List<PendingTransactionDto>();
+      ListOfPendingTransactions = new List<PendingTransactionDto>();
     }
-    public List<PendingTransactionDto> ListOfTransactions { get; set; }
+    public List<PendingTransactionDto> ListOfPendingTransactions { get; set; }
   }
 }

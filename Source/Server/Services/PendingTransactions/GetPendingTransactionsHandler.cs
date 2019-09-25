@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Server.Services.JuliesApi
+﻿namespace TransactionProject.Server.Services.PendingTransactions
 {
   using MediatR;
   using System;

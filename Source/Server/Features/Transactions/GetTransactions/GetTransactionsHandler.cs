@@ -2,9 +2,9 @@
 {
   using System.Threading;
   using System.Threading.Tasks;
-  using TransactionProject.Api.Features.Transactions;
+  using TransactionProject.Api.Features.PendingTransactions;
   using MediatR;
-  using TransactionProject.Server.Services.Transactions;
+  using TransactionProject.Server.Services.PendingTransactions;
 
   public class GetTransactionsHandler : IRequestHandler<GetTransactionsApiRequest, GetTransactionsApiResponse>
   {
