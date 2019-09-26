@@ -1,9 +1,9 @@
-﻿namespace TransactionProject.Client.Features.Transactions.Components
+﻿namespace TransactionProject.Client.Features.PendingTransactions.Components
 {
   using Microsoft.AspNetCore.Components;
   using System;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
 
   public class TransactionComponentBase : BaseComponent
   {

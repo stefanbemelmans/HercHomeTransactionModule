@@ -1,9 +1,10 @@
-﻿namespace TransactionProject.Client.Features.Transactions
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using BlazorState;
   using MediatR;
   using System.Threading;
   using System.Threading.Tasks;
+  using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
 
   internal partial class TransactionState
@@ -18,7 +19,7 @@
         CancellationToken aCancellationToken
       )
       {
-        TransactionDto selectedTransaction = TransactionState._ListOfTransactions.Find(aDto => aDto.TxId == aSelectTransactionAction.TxId);
+        PendingTransactionDto selectedTransaction = TransactionState._ListOfTransactions.Find(aDto => aDto.TxId == aSelectTransactionAction.TxId);
         TransactionState._TransactionsToPay.Add(selectedTransaction);
         return Unit.Task;
       }

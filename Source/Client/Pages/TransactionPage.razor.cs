@@ -3,7 +3,7 @@
   using System;
   using System.Threading.Tasks;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
 
   public class TransactionPageBase : BaseComponent
   {

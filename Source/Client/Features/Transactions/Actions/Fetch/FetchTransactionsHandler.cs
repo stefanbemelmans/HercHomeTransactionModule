@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Client.Features.Transactions
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using BlazorState;
   using MediatR;
@@ -6,7 +6,7 @@
   using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
-  using TransactionProject.Api.Features.Transactions;
+  using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
 
   internal partial class TransactionState
@@ -22,14 +22,14 @@
 
       public override async Task<Unit> Handle
       (
-        FetchTransactionsAction aFetcTransactionsAction,
+        FetchTransactionsAction aFetchTransactionsAction,
         CancellationToken aCancellationToken
       )
       {
-        var getTransactionsApiRequest = new GetTransactionsApiRequest { NumberOfTransactions = aFetcTransactionsAction.NumberOfTransactions };
-        GetTransactionsApiResponse getTransactionsApiResponse =
-          await HttpClient.PostJsonAsync<GetTransactionsApiResponse>(GetTransactionsApiRequest.Route, getTransactionsApiRequest);
-        TransactionState._ListOfTransactions = getTransactionsApiResponse.ListOfTransactions;
+        var getTransactionsApiRequest = new GetPendingTransactionsApiRequest { NumberOfTransactions = aFetchTransactionsAction.NumberOfTransactions };
+        GetPendingTransactionsApiResponse getTransactionsApiResponse =
+          await HttpClient.PostJsonAsync<GetPendingTransactionsApiResponse>(GetPendingTransactionsApiRequest.Route, getTransactionsApiRequest);
+        TransactionState._ListOfTransactions = getTransactionsApiResponse.ListOfPendingTransactions;
         return Unit.Value;
       }
     }

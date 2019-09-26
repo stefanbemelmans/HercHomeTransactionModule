@@ -6,10 +6,9 @@
   using Shouldly;
   using System;
   using System.Threading.Tasks;
-  using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
   using TransactionProject.Client.Integration.Tests.Infrastructure;
-  using static TransactionProject.Client.Features.Transactions.Actions.Payment.TransactionState;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
 
   internal class SelectTransactionTests
   {

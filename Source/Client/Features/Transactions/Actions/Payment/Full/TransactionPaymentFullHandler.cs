@@ -1,11 +1,12 @@
-﻿namespace TransactionProject.Client.Features.Transactions
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using BlazorState;
   using MediatR;
+  using System.Collections.Generic;
   using System.Threading;
   using System.Threading.Tasks;
+  using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
-  using System.Collections.Generic;
 
   internal partial class TransactionState
   {
@@ -19,9 +20,8 @@
         CancellationToken aCancellationToken
       )
       {
-        
-        TransactionState._TransactionsToPay = new List<TransactionDto>();
-        TransactionState._ListOfTransactions = new List<TransactionDto>();
+        TransactionState._TransactionsToPay = new List<PendingTransactionDto>();
+        TransactionState._ListOfTransactions = new List<PendingTransactionDto>();
         return Unit.Task;
       }
     }

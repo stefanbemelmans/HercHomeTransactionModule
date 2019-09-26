@@ -4,7 +4,6 @@
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
-  using TransactionProject.Api.Features.JuliesApi.AssetTransaction;
 
   public class MakeAssetTransactionHandler : IRequestHandler<MakeAssetTransactionRequest, MakeAssetTransactionResponse>
   {

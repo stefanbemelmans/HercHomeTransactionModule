@@ -1,10 +1,10 @@
-﻿namespace TransactionProject.Client.Features.Transactions.Components
+﻿namespace TransactionProject.Client.Features.PendingTransactions.Components
 {
   using System.Collections.Generic;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
 
   public class TransactionBalanceComponentBase : BaseComponent
   {

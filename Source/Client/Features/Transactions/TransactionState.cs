@@ -1,24 +1,24 @@
-﻿namespace TransactionProject.Client.Features.Transactions
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using BlazorState;
   using System.Collections.Generic;
   using System.Linq;
-  using TransactionProject.Api.Features.Transactions;
+  using TransactionProject.Api.Features.PendingTransactions;
 
   internal partial class TransactionState : State<TransactionState>
   {
-    private List<TransactionDto> _ListOfTransactions;
-    private List<TransactionDto> _TransactionsToPay;
+    private List<PendingTransactionDto> _ListOfTransactions;
+    private List<PendingTransactionDto> _TransactionsToPay;
 
-    public IReadOnlyList<TransactionDto> ListOfTransactions => _ListOfTransactions.AsReadOnly();
-    public IReadOnlyList<TransactionDto> TransactionsToPay => _TransactionsToPay.AsReadOnly();
+    public IReadOnlyList<PendingTransactionDto> ListOfTransactions => _ListOfTransactions.AsReadOnly();
+    public IReadOnlyList<PendingTransactionDto> TransactionsToPay => _TransactionsToPay.AsReadOnly();
 
-    public int TotalBalance => TransactionsToPay.Sum(aTransactionDto => aTransactionDto.TransactionAmount);
+    public int TotalBalance => TransactionsToPay.Sum(aPendingTransactionDto => aPendingTransactionDto.TransactionAmount);
 
     public TransactionState()
     {
-      _ListOfTransactions = new List<TransactionDto>();
-      _TransactionsToPay = new List<TransactionDto>();
+      _ListOfTransactions = new List<PendingTransactionDto>();
+      _TransactionsToPay = new List<PendingTransactionDto>();
     }
 
     protected override void Initialize() { }

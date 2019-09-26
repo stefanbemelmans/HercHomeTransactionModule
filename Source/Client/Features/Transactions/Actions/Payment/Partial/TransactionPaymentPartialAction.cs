@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Client.Features.Transactions
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using TransactionProject.Client.Features.Base;
 

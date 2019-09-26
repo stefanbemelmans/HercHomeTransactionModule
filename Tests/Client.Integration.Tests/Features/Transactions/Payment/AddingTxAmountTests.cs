@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Client.Integration.Tests.Features.Transactions
+﻿namespace TransactionProject.Client.Integration.Tests.Features.PendingTransactions
 {
   using TransactionProject.Client.Integration.Tests.Infrastructure;
   using BlazorState;
@@ -7,8 +7,8 @@
   using Shouldly;
   using System;
   using System.Threading.Tasks;
-  using static TransactionProject.Client.Features.Transactions.Actions.Payment.TransactionState;
   using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
 
   internal class AddingTxAmountTests
   {
