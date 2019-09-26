@@ -6,9 +6,16 @@
 
   public class CreateAssetDefinitionRequest : IRequest<CreateAssetDefinitionResponse>
   {
-    public string AssetName { get; set; }
-    public byte[] Logo { get; set; }
-    public List<MetricDefinitionDto> Metrics { get; set; }
-    public string Permissable { get; set; }
+
+    public AssetDefinitionDto AssetDefinition { get; set; }
+
+    public CreateAssetDefinitionRequest()
+    {
+      AssetDefinition = new AssetDefinitionDto();
+    }
+    //public string AssetName { get; set; }
+    //public byte[] Logo { get; set; }
+    //public List<MetricDefinitionDto> Metrics { get; set; }
+    //public string Permissable { get; set; }
   }
 }

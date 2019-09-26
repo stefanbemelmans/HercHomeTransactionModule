@@ -9,6 +9,7 @@
   using System.Linq;
   using System.Net.Mime;
   using System.Reflection;
+  using TransactionProject.Server.Services.JuliesApi;
 
   public class Startup
   {
@@ -57,6 +58,7 @@
       new Client.Startup().ConfigureServices(aServiceCollection);
 
       aServiceCollection.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+      aServiceCollection.AddScoped<JuliesApiHttpClient>();
 
       aServiceCollection.Scan
       (

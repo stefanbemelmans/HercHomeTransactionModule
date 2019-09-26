@@ -1,7 +1,7 @@
-﻿namespace TransactionProject.Api.Features.JuliesApi.AssetTransactions
+﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using FluentValidation;
-  using TransactionProject.Api.Features.JuliesApi.AssetTransaction;
+  using TransactionProject.Api.Features.JuliesApi;
 
   public class MakeAssetTransactionApiRequestValidatorCollection : AbstractValidator<MakeAssetTransactionApiRequest>
   {

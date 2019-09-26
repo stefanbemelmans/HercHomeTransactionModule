@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Server.Services.JuliesApi.Assets.MakeAssetTransaction
+﻿namespace TransactionProject.Server.Services.JuliesApi
 {
   using MediatR;
   using System.Collections.Generic;

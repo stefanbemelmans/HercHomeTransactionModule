@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Api.Features.JuliesApi.AssetTransactions
+﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using System;
   using TransactionProject.Api.Features.Base;

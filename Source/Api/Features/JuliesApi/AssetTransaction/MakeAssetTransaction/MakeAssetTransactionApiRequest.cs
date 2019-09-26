@@ -1,9 +1,7 @@
-﻿namespace TransactionProject.Api.Features.JuliesApi.AssetTransaction
+﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using MediatR;
-  using System.Collections.Generic;
   using TransactionProject.Api.Features.Base;
-  using TransactionProject.Api.Features.JuliesApi.AssetTransactions;
 
   public class MakeAssetTransactionApiRequest : BaseRequest, IRequest<MakeAssetTransactionApiResponse>
   {
@@ -13,7 +11,7 @@
     /// <summary>
     /// The AssetTransactionDto which reflects the AssetTransaction you wish to create
     /// </summary>
-    /// 
+    ///
 
     public AssetTransactionDto AssetTransactionDto { get; set; }
     //public string AssetKey { get; set; }

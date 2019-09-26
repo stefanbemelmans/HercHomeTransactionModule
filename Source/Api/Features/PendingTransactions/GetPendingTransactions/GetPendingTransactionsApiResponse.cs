@@ -4,12 +4,12 @@
   using System.Collections.Generic;
   using TransactionProject.Api.Features.Base;
 
-  public class GetPendingTransactionsResponse : BaseResponse
+  public class GetPendingTransactionsApiResponse : BaseResponse
   {
     /// <summary>
     /// a default constructor is required for deserialization
     /// </summary>
-    public GetPendingTransactionsResponse() { }
+    public GetPendingTransactionsApiResponse() { }
 
     public List<PendingTransactionDto> ListOfPendingTransactions { get; set; }
   }

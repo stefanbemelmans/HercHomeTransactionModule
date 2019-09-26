@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Api.Features.JuliesApi.AssetTransaction
+﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using FluentValidation;
   using System.Linq;

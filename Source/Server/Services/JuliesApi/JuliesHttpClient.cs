@@ -1,8 +1,8 @@
 ﻿namespace TransactionProject.Server.Services.JuliesApi
 {
-  using System.Net.Http;
-
-  class JuliesApiHttpClient : HttpClient
+  using Microsoft.AspNetCore.Blazor.HttpClient;
+ 
+  public class JuliesApiHttpClient : HttpClient
   {
     public string BaseUrl = "http://api.herc.one/assets/";
    

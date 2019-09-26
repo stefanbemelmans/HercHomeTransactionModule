@@ -3,7 +3,7 @@
   using TransactionProject.Api.Features.Base;
   using MediatR;
 
-  public class GetPendingTransactionsRequest : BaseRequest, IRequest<GetPendingTransactionsResponse>
+  public class GetPendingTransactionsApiRequest : BaseRequest, IRequest<GetPendingTransactionsApiResponse>
   {
     public const string Route = "api/pendingTransactions";
     /// <summary>

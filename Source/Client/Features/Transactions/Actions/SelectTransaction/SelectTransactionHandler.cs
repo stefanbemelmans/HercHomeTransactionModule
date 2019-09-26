@@ -5,7 +5,6 @@
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Client.Features.Base;
-  using TransactionProject.Api.Features.Transactions;
 
   internal partial class TransactionState
   {

@@ -1,10 +1,8 @@
 ﻿namespace TransactionProject.Client.Features.Transactions.Components
 {
-  using System.Collections.Generic;
-  using TransactionProject.Client.Features.Base.Components;
-  using TransactionProject.Api.Features.Transactions;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
   using System.Threading.Tasks;
+  using TransactionProject.Client.Features.Base.Components;
+  using static TransactionProject.Client.Features.Transactions.TransactionState;
 
   public class TransactionListComponentBase : BaseComponent
   {

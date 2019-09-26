@@ -9,10 +9,11 @@
 
   public class CreateAssetDefinitionHandler : IRequestHandler<CreateAssetDefinitionRequest, CreateAssetDefinitionResponse>
   {
-   
+    public JuliesApiHttpClient JuliesApi { get; set; }
 
-    public CreateAssetDefinitionHandler()
+    public CreateAssetDefinitionHandler(JuliesApiHttpClient aJuliesApi)
     {
+      JuliesApi = aJuliesApi;
     }
 
     public async Task<CreateAssetDefinitionResponse> Handle
@@ -21,7 +22,7 @@
        CancellationToken aCancellationToken
      )
     {
-      var AssetDefCreateResponse = await JuliesApiHttpClient.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint + CreateAssetDefinitionApiRequest.ApiKey);
+      var AssetDefCreateResponse = await JuliesApi.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint + CreateAssetDefinitionApiRequest.ApiKey);
       return AssetDefCreateResponse;
     }
   }
