@@ -2,9 +2,9 @@
 {
   using FluentValidation;
 
-  public class CreateAssetDefRequestValidatorCollection : AbstractValidator<CreateAssetDefinitionApiRequest>
+  public class CreateAssetDefinitionApiRequestValidatorCollection : AbstractValidator<CreateAssetDefinitionApiRequest>
   {
-    public CreateAssetDefRequestValidatorCollection()
+    public CreateAssetDefinitionApiRequestValidatorCollection()
     {
       RuleFor(aCreateAssetDefRequest => aCreateAssetDefRequest.AssetDefinitionDto)
         .SetValidator(new AssetDefinitionDtoValidator());

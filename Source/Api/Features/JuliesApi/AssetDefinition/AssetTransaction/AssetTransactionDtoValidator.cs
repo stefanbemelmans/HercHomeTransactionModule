@@ -7,7 +7,7 @@
   {
     public AssetTransactionDtoValidator()
     {
-      RuleFor(aAssetDefinitionDto => aAssetDefinitionDto.AssetKey)
+      RuleFor(aAssetTransactionDto => aAssetTransactionDto.AssetKey)
         .NotEmpty();
 
       // TODO: MetricsDtoValidator

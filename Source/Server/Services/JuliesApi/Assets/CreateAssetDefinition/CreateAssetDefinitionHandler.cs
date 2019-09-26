@@ -5,15 +5,14 @@
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
-  using TransactionProject.Api.Services.JuliesApi;
+  using Microsoft.AspNetCore.Components;
 
   public class CreateAssetDefinitionHandler : IRequestHandler<CreateAssetDefinitionRequest, CreateAssetDefinitionResponse>
   {
-    private HttpClient HttpClient { get; set; }
+   
 
-    public CreateAssetDefinitionHandler(HttpClient aHttpClient)
+    public CreateAssetDefinitionHandler()
     {
-      HttpClient = aHttpClient;
     }
 
     public async Task<CreateAssetDefinitionResponse> Handle
@@ -22,7 +21,8 @@
        CancellationToken aCancellationToken
      )
     {
-      var AssetDefCreateResponse = await JuliesApiHttpClient.SendAsync(Api.Features.JuliesApi.CreateAssetDefinitionRequest.CreateAssetEndpoint + )
+      var AssetDefCreateResponse = await JuliesApiHttpClient.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint + CreateAssetDefinitionApiRequest.ApiKey);
+      return AssetDefCreateResponse;
     }
   }
 }

@@ -1,4 +1,4 @@
-﻿namespace TransactionProject.Api.Services.JuliesApi
+﻿namespace TransactionProject.Server.Services.JuliesApi
 {
   using System.Net.Http;
 
