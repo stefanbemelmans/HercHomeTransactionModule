@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\JuliesApi\AssetDefinition\AssetTransaction\GetAssetTransaction\" />
+    <Folder Include="Features\JuliesApi\AssetTransaction\GetAssetTransaction\" />
   </ItemGroup>
 </Project>
