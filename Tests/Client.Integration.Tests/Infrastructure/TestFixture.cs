@@ -62,7 +62,7 @@
       aServiceCollection.AddTransient<ApplicationState>();
       aServiceCollection.AddTransient<CounterState>();
       aServiceCollection.AddTransient<EventStreamState>();
-      aServiceCollection.AddTransient<TransactionState>();
+      aServiceCollection.AddTransient<PendingTransactionState>();
       aServiceCollection.AddTransient<WeatherForecastsState>();
 
     }

@@ -7,7 +7,7 @@
   using TransactionProject.Client.Features.Base;
   using TransactionProject.Api.Features.PendingTransactions;
 
-  internal partial class TransactionState
+  internal partial class PendingTransactionState
   {
     public class DeSelectTransactionHandler : BaseHandler<DeSelectTransactionAction>
     {
@@ -19,8 +19,8 @@
         CancellationToken aCancellationToken
       )
       {
-        PendingTransactionDto deSelectedTransaction = TransactionState._ListOfTransactions.Find(aDto => aDto.TxId == aDeSelectTransactionAction.TxId);
-        TransactionState._TransactionsToPay.Remove(deSelectedTransaction);
+        PendingTransactionDto deSelectedTransaction = TransactionState._ListOfPendingTransactions.Find(aDto => aDto.TxId == aDeSelectTransactionAction.TxId);
+        TransactionState._PendingTransactionsToPay.Remove(deSelectedTransaction);
         return Unit.Task;
       }
     }

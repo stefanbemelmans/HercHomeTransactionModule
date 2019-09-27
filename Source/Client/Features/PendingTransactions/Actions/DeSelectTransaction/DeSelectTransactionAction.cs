@@ -2,7 +2,7 @@
 {
   using TransactionProject.Client.Features.Base;
 
-  internal partial class TransactionState
+  internal partial class PendingTransactionState
   {
     public class DeSelectTransactionAction : BaseAction
     {

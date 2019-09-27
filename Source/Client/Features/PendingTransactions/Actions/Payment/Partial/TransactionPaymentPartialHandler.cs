@@ -4,9 +4,10 @@
   using MediatR;
   using System.Threading;
   using System.Threading.Tasks;
+  using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
 
-  internal partial class TransactionState
+  internal partial class PendingTransactionState
   {
     public class TransactionPaymentPartialHandler : BaseHandler<TransactionPaymentPartialAction>
     {
@@ -18,9 +19,9 @@
         CancellationToken aCancellationToken
       )
       {
-        foreach(TransactionDto aDto in TransactionState.TransactionsToPay)
+        foreach(PendingTransactionDto aDto in TransactionState.TransactionsToPay)
         {
-          TransactionState._ListOfTransactions.Remove(aDto);
+          TransactionState._ListOfPendingTransactions.Remove(aDto);
         }
 
         //TransactionState._TransactionsToPay = new List<TransactionDto>();

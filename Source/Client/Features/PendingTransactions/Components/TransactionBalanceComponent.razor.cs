@@ -4,7 +4,7 @@
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.PendingTransactionState;
 
   public class TransactionBalanceComponentBase : BaseComponent
   {

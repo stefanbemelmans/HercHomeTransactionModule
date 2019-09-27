@@ -8,7 +8,7 @@
   using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
 
-  internal partial class TransactionState
+  internal partial class PendingTransactionState
   {
     public class TransactionPaymentHandler : BaseHandler<TransactionPaymentFullAction>
     {
@@ -20,8 +20,8 @@
         CancellationToken aCancellationToken
       )
       {
-        TransactionState._TransactionsToPay = new List<PendingTransactionDto>();
-        TransactionState._ListOfTransactions = new List<PendingTransactionDto>();
+        TransactionState._PendingTransactionsToPay = new List<PendingTransactionDto>();
+        TransactionState._ListOfPendingTransactions = new List<PendingTransactionDto>();
         return Unit.Task;
       }
     }

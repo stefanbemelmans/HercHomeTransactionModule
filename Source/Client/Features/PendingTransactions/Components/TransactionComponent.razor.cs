@@ -3,7 +3,7 @@
   using Microsoft.AspNetCore.Components;
   using System;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.PendingTransactionState;
 
   public class TransactionComponentBase : BaseComponent
   {

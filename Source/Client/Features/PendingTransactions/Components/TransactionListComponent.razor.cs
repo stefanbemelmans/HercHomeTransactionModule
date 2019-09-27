@@ -2,7 +2,7 @@
 {
   using System.Threading.Tasks;
   using TransactionProject.Client.Features.Base.Components;
-  using static TransactionProject.Client.Features.PendingTransactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.PendingTransactionState;
 
   public class TransactionListComponentBase : BaseComponent
   {

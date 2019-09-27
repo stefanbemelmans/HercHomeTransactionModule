@@ -9,7 +9,7 @@
   using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base;
 
-  internal partial class TransactionState
+  internal partial class PendingTransactionState
   {
     public class FetchTransactionsHandler : BaseHandler<FetchTransactionsAction>
     {
@@ -29,7 +29,7 @@
         var getTransactionsApiRequest = new GetPendingTransactionsApiRequest { NumberOfTransactions = aFetchTransactionsAction.NumberOfTransactions };
         GetPendingTransactionsApiResponse getTransactionsApiResponse =
           await HttpClient.PostJsonAsync<GetPendingTransactionsApiResponse>(GetPendingTransactionsApiRequest.Route, getTransactionsApiRequest);
-        TransactionState._ListOfTransactions = getTransactionsApiResponse.ListOfPendingTransactions;
+        TransactionState._ListOfPendingTransactions = getTransactionsApiResponse.ListOfPendingTransactions;
         return Unit.Value;
       }
     }
