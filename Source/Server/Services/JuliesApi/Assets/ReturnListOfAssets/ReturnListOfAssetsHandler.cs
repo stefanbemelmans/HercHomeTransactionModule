@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TransactionProject.Server.Services.JuliesApi
+﻿namespace TransactionProject.Server.Services.JuliesApi
 {
-    public class ReturnListOfAssetsHandler
+  public class ReturnListOfAssetsHandler
     {
         
     }

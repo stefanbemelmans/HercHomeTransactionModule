@@ -4,11 +4,16 @@
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
+  using Microsoft.AspNetCore.Components;
 
   public class MakeAssetTransactionHandler : IRequestHandler<MakeAssetTransactionRequest, MakeAssetTransactionResponse>
   {
-    private MakeAssetTransactionHandler()
-    { }
+    public JuliesApiHttpClient JuliesApi { get; set; }
+
+    private MakeAssetTransactionHandler(JuliesApiHttpClient aJuliesApi)
+    {
+      JuliesApi = aJuliesApi;
+    }
 
     public async Task<MakeAssetTransactionResponse> Handle
       (
@@ -16,7 +21,14 @@
       CancellationToken aCancellationToken
       )
     {
-      var MakeAssetResponse = await JuliesApiHttpClient.PostJsonAsync<CreateAssetDefinitionResponse>(MakeAssetTransactionApiRequest.CreateAssetEndpoint + CreateAssetDefinitionApiRequest.ApiKey);
+      MakeAssetTransactionResponse makeAssetResponse = await JuliesApi.PostJsonAsync<MakeAssetTransactionResponse>(MakeAssetTransactionApiRequest.MakeTransactionEndpoint, new MakeAssetTransactionRequest
+      {
+        AssetTransaction = aMakeAssetTransactionRequest.AssetTransaction
+      });
+      return new MakeAssetTransactionResponse
+      {
+        TransactionKey = makeAssetResponse.TransactionKey
+      };
     }
   }
 }

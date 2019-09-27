@@ -1,11 +1,10 @@
 ﻿namespace TransactionProject.Server.Services.JuliesApi
 {
   using MediatR;
-  using System.Net.Http;
+  using Microsoft.AspNetCore.Components;
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
-  using Microsoft.AspNetCore.Components;
 
   public class CreateAssetDefinitionHandler : IRequestHandler<CreateAssetDefinitionRequest, CreateAssetDefinitionResponse>
   {
@@ -22,8 +21,11 @@
        CancellationToken aCancellationToken
      )
     {
-      var AssetDefCreateResponse = await JuliesApi.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint + CreateAssetDefinitionApiRequest.ApiKey);
-      return AssetDefCreateResponse;
+      CreateAssetDefinitionResponse assetDefCreateResponse = await JuliesApi.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint, new CreateAssetDefinitionRequest
+      {
+        AssetDefinition = aCreateAssetRequest.AssetDefinition
+      });
+      return assetDefCreateResponse;
     }
   }
 }

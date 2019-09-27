@@ -6,7 +6,7 @@
   public class CreateAssetDefinitionApiRequest : BaseRequest, IRequest<CreateAssetDefintionApiResponse>
   {
     public const string ApiKey = "magicApiKey";
-    public const string CreateAssetEndpoint = "create?api_key=";
+    public const string CreateAssetEndpoint = "create?api_key="+ApiKey;
     public const string Route = "api/CreateAssetDef";
 
     /// <summary>

@@ -1,49 +1,49 @@
-﻿namespace TransactionProject.Server.Integration.Tests.Features.Transactions.GetAll
+﻿namespace TransactionProject.Server.Integration.Tests.Features.PendingTransactions.GetAll
 {
-  using TransactionProject.Api.Features.Transactions;
-  using TransactionProject.Server.Integration.Tests.Infrastructure;
   using MediatR;
   using Microsoft.Extensions.DependencyInjection;
   using Shouldly;
   using System;
   using System.Threading.Tasks;
-  using TransactionProject.Server.Services.Transactions;
+  using TransactionProject.Api.Features.PendingTransactions;
+  using TransactionProject.Server.Integration.Tests.Infrastructure;
+  using TransactionProject.Server.Services.PendingTransactions;
 
-  internal class GetTransactionsTests
+  internal class GetPendingTransactionsTests
   {
     private readonly IMediator Mediator;
     private readonly IServiceProvider ServiceProvider;
 
-    public GetTransactionsTests(TestFixture aTestFixture)
+    public GetPendingTransactionsTests(TestFixture aTestFixture)
     {
       ServiceProvider = aTestFixture.ServiceProvider;
       Mediator = ServiceProvider.GetService<IMediator>();
     }
 
-    public async Task ShouldGetTransactions()
+    public async Task ShouldGetPendingTransactions()
     {
       // Arrange
-      var getTransactionsRequest = new GetTransactionsRequest();
+      var getPendingTransactionsRequest = new GetPendingTransactionsRequest();
 
       //Act
-      GetTransactionsResponse getTransactionsResponse =
-        await Mediator.Send(getTransactionsRequest);
+      GetPendingTransactionsResponse getPendingTransactionsResponse =
+        await Mediator.Send(getPendingTransactionsRequest);
 
       //Assert
-      getTransactionsResponse.ListOfTransactions.Count.ShouldBe(10);
+      getPendingTransactionsResponse.ListOfPendingTransactions.Count.ShouldBe(10);
     }
 
     public async Task ShouldGetTransactionsFromServerFeatures()
     {
       // Arrange
-      var getTransactionsApiRequest = new GetTransactionsApiRequest();
+      var getPendingTransactionsApiRequest = new GetPendingTransactionsApiRequest();
 
       //Act
-      GetTransactionsApiResponse getTransactionsApiResponse =
-        await Mediator.Send(getTransactionsApiRequest);
+      GetPendingTransactionsApiResponse getPendingTransactionsApiResponse =
+        await Mediator.Send(getPendingTransactionsApiRequest);
 
       //Assert
-      getTransactionsApiResponse.ListOfTransactions.Count.ShouldBe(10);
+      getPendingTransactionsApiResponse.ListOfPendingTransactions.Count.ShouldBe(10);
     }
   }
 }
