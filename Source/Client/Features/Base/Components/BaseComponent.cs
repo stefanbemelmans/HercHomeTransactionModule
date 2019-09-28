@@ -22,6 +22,6 @@
     internal CounterState CounterState => GetState<CounterState>();
     internal EventStreamState EventStreamState => GetState<EventStreamState>();
     internal WeatherForecastsState WeatherForecastsState => GetState<WeatherForecastsState>();
-    internal PendingTransactionState TransactionState => GetState<PendingTransactionState>();
+    internal PendingTransactionState PendingTransactionState => GetState<PendingTransactionState>();
   }
 }

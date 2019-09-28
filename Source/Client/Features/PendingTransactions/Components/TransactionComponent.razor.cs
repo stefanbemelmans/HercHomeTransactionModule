@@ -1,7 +1,8 @@
-﻿namespace TransactionProject.Client.Features.PendingTransactions.Components
+﻿namespace TransactionProject.Client.Features.PendingTransactions
 {
   using Microsoft.AspNetCore.Components;
   using System;
+  using TransactionProject.Api.Features.PendingTransactions;
   using TransactionProject.Client.Features.Base.Components;
   using static TransactionProject.Client.Features.PendingTransactions.PendingTransactionState;
 
@@ -9,6 +10,8 @@
   {
     public string BackgroundColor => IsClicked ? "#AEEEEE" : "#E0EEEE";
 
+    [Parameter]
+    public PendingTransactionDto PendingTransaction { get; set; }
     [Parameter]
     public int Gas { get; set; }
 
@@ -39,7 +42,7 @@
 
         IsClicked = !IsClicked;
         Console.WriteLine("IsClicked after methods: " + IsClicked);
-        Console.WriteLine("Total: " + TransactionState.TotalBalance);
+        Console.WriteLine("Total: " + PendingTransactionState.TotalBalance);
       }
       else
       {
@@ -50,7 +53,7 @@
         Mediator.Send(new SelectTransactionAction { TxId = TxId });
         IsClicked = !IsClicked;
         Console.WriteLine("IsClicked after methods: " + IsClicked);
-        Console.WriteLine("Total: " + TransactionState.TotalBalance);
+        Console.WriteLine("Total: " + PendingTransactionState.TotalBalance);
       }
     }
   }

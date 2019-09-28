@@ -12,7 +12,6 @@
   using TransactionProject.Client.Features.Counter;
   using TransactionProject.Client.Features.EventStream;
   using TransactionProject.Client.Features.PendingTransactions;
-  using TransactionProject.Client.Features.Transactions;
   using TransactionProject.Client.Features.WeatherForecast;
 
   /// <summary>

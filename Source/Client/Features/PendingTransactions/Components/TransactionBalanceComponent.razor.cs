@@ -8,9 +8,9 @@
 
   public class TransactionBalanceComponentBase : BaseComponent
   {
-    public int TotalBalance => TransactionState.TotalBalance;
-    public int TotalCount => TransactionState.TransactionsToPay.Count;
-    public IReadOnlyList<PendingTransactionDto> TransactionsToPay => TransactionState.TransactionsToPay;
+    public int TotalBalance => PendingTransactionState.TotalBalance;
+    public int TotalCount => PendingTransactionState.TransactionsToPay.Count;
+    public IReadOnlyList<PendingTransactionDto> TransactionsToPay => PendingTransactionState.TransactionsToPay;
 
 
     public async Task PayAll() => _ = await Mediator.Send(new TransactionPaymentFullAction());
