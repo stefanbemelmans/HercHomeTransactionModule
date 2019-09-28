@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TransactionProject.Server.Services.JuliesApi.Assets.ReturnTransactionsOnASingleAsset
+﻿namespace TransactionProject.Server.Services.JuliesApi.Assets.ReturnTransactionsOnASingleAsset
 {
-    public class ReturnTransactionsOnASingleAssetResponse
+  using System.Collections.Generic;
+  using TransactionProject.Api.Features.JuliesApi;
+
+  public class ReturnTransactionsOnASingleAssetResponse
     {
-        
+        public List<AssetTransactionDto> TransactionList { get; set; }
+
     }
 }
