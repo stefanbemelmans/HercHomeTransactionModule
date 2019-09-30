@@ -37,6 +37,7 @@
     <BlazorExtensionsLoggingVersion>0.4.0</BlazorExtensionsLoggingVersion>
     <FixieVersion>2.1.1</FixieVersion>
     <FixieConsoleVersion>2.1.1</FixieConsoleVersion>
+    <FluentValidation>8.4.0</FluentValidation>
     <MediatrExtensionsMicrosoftDependencyInjectionVersion>7.0.0</MediatrExtensionsMicrosoftDependencyInjectionVersion>
     <MediatrVersion>7.0.0</MediatrVersion>
     <MoqVersion>4.13.0</MoqVersion>

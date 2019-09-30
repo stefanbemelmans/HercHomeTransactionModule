@@ -2,7 +2,7 @@
 {
   using BlazorState.Services;
   using Microsoft.AspNetCore.Components;
-  using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
   
   public class TransactionLayoutBase : LayoutComponentBase
   {

@@ -5,7 +5,7 @@
   using TransactionProject.Client.Features.Counter;
   using TransactionProject.Client.Features.WeatherForecast;
   using TransactionProject.Client.Features.EventStream;
-  using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
 
   /// <summary>
   /// Makes access to the State a little easier and by inheriting from
@@ -22,6 +22,6 @@
     internal CounterState CounterState => GetState<CounterState>();
     internal EventStreamState EventStreamState => GetState<EventStreamState>();
     internal WeatherForecastsState WeatherForecastsState => GetState<WeatherForecastsState>();
-    internal TransactionState TransactionState => GetState<TransactionState>();
+    internal PendingTransactionState PendingTransactionState => GetState<PendingTransactionState>();
   }
 }

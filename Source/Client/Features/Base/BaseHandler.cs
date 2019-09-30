@@ -4,7 +4,7 @@
   using TransactionProject.Client.Features.Application;
   using TransactionProject.Client.Features.Counter;
   using TransactionProject.Client.Features.EventStream;
-  using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
   using TransactionProject.Client.Features.WeatherForecast;
 
   /// <summary>
@@ -20,7 +20,7 @@
 
     protected EventStreamState EventStreamState => Store.GetState<EventStreamState>();
 
-    protected TransactionState TransactionState => Store.GetState<TransactionState>();
+    protected PendingTransactionState TransactionState => Store.GetState<PendingTransactionState>();
 
     protected WeatherForecastsState WeatherForecastsState => Store.GetState<WeatherForecastsState>();
 

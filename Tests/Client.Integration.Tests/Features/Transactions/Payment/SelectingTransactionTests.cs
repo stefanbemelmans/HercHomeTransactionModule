@@ -6,17 +6,16 @@
   using Shouldly;
   using System;
   using System.Threading.Tasks;
-  using TransactionProject.Client.Features.Transactions;
+  using TransactionProject.Client.Features.PendingTransactions;
   using TransactionProject.Client.Integration.Tests.Infrastructure;
-  using static TransactionProject.Client.Features.Transactions.Actions.Payment.TransactionState;
-  using static TransactionProject.Client.Features.Transactions.TransactionState;
+  using static TransactionProject.Client.Features.PendingTransactions.PendingTransactionState;
 
   internal class SelectTransactionTests
   {
     private readonly IMediator Mediator;
     private readonly IServiceProvider ServiceProvider;
     private readonly IStore Store;
-    private TransactionState TransactionState => Store.GetState<TransactionState>();
+    private PendingTransactionState TransactionState => Store.GetState<PendingTransactionState>();
 
     public SelectTransactionTests(TestFixture aTestFixture)
     {
