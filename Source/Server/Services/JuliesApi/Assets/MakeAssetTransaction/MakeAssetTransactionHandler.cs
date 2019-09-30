@@ -10,7 +10,7 @@
   {
     public JuliesApiHttpClient JuliesApi { get; set; }
 
-    private MakeAssetTransactionHandler(JuliesApiHttpClient aJuliesApi)
+    public MakeAssetTransactionHandler(JuliesApiHttpClient aJuliesApi)
     {
       JuliesApi = aJuliesApi;
     }

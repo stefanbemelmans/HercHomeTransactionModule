@@ -4,6 +4,7 @@
 
   public class AssetTransactionDto
   {
+    public AssetTransactionDto() { }
     /// <summary>
     /// the unique identifier key to your asset. You can retrieve it by calling /assets/list.
     /// </summary>
