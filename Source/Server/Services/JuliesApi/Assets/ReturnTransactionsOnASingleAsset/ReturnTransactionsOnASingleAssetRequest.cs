@@ -1,7 +1,9 @@
-﻿namespace TransactionProject.Server.Services.JuliesApi.Assets.ReturnTransactionsOnASingleAsset
+﻿namespace TransactionProject.Server.Services.JuliesApi
 {
-  public class ReturnTransactionsOnASingleAssetRequest
-    {
-        
-    }
+  using MediatR;
+
+  public class ReturnTransactionsOnASingleAssetRequest : IRequest<ReturnTransactionsOnASingleAssetResponse>
+  {
+    public string AssetKey { get; set; }
+  }
 }

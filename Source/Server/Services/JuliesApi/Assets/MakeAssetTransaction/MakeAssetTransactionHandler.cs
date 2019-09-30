@@ -1,10 +1,10 @@
 ﻿namespace TransactionProject.Server.Services.JuliesApi
 {
   using MediatR;
+  using Microsoft.AspNetCore.Components;
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
-  using Microsoft.AspNetCore.Components;
 
   public class MakeAssetTransactionHandler : IRequestHandler<MakeAssetTransactionRequest, MakeAssetTransactionResponse>
   {
@@ -23,7 +23,7 @@
     {
       MakeAssetTransactionResponse makeAssetResponse = await JuliesApi.PostJsonAsync<MakeAssetTransactionResponse>(MakeAssetTransactionApiRequest.MakeTransactionEndpoint, new MakeAssetTransactionRequest
       {
-        AssetTransaction = aMakeAssetTransactionRequest.AssetTransaction
+       AssetTransaction = aMakeAssetTransactionRequest.AssetTransaction
       });
       return new MakeAssetTransactionResponse
       {
