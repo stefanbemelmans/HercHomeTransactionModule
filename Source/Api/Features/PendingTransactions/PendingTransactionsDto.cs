@@ -2,7 +2,7 @@
 {
   using System;
 
-    public class PendingTransactionDto
+  public class PendingTransactionDto
   {
     public int Gas { get; set; }
 
@@ -11,9 +11,10 @@
     public int TransactionAmount { get; set; }
 
     public DateTime TxDate { get; set; }
-
     public int TxId { get; set; }
+
     public PendingTransactionDto() { }
+
     public PendingTransactionDto(DateTime aDateTime, int aTransactionAmount, int aGas, string aToAddress, int aTxId)
     {
       TxDate = aDateTime;

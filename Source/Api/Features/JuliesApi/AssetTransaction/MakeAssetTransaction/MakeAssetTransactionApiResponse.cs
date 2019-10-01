@@ -7,6 +7,6 @@
   {
     public MakeAssetTransactionApiResponse() { }
     public MakeAssetTransactionApiResponse(Guid aRequestId) : base(aRequestId) { }
-    public string AssetKey { get; set; }
+    public string TransactionKey { get; set; }
   }
 }

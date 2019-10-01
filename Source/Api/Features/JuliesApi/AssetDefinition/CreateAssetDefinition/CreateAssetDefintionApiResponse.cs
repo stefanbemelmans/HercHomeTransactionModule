@@ -7,6 +7,8 @@
   {
     public CreateAssetDefintionApiResponse() { }
     public CreateAssetDefintionApiResponse(Guid aRequestId) : base(aRequestId) { }
-    public AssetDefinitionDto AssetDefinition { get; set; }
+    public string FactomChainId { get; set; }
+
+    public string IpfsHash { get; set; }
   }
 }
