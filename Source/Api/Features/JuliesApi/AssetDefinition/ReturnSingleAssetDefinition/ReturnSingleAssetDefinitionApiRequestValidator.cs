@@ -1,12 +1,14 @@
 ﻿namespace TransactionProject.Api.Features.JuliesApi
 {
   using FluentValidation;
+  using TransactionProject.Api.Features.JuliesApi;
 
-  public class GetAssetDefinitionApiRequestValidatorCollection : AbstractValidator<GetAssetDefinitionApiRequest>
+  public class ReturnSingleAssetDefintionApiRequestValidatorCollection : AbstractValidator<ReturnSingleAssetDefintionApiRequest>
   {
-    public GetAssetDefinitionApiRequestValidatorCollection()
+    public ReturnSingleAssetDefintionApiRequestValidatorCollection()
     {
-      RuleFor(aGetAssetDefinitionApiRequest => aGetAssetDefinitionApiRequest.AssetDefinitionId).GreaterThan(0);
+      RuleFor(aMakeTransactionApiRequest => aMakeTransactionApiRequest.AssetKey).NotNull();
+        
     }
   }
 }

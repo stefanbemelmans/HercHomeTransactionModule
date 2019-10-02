@@ -2,10 +2,10 @@
 {
   using MediatR;
   using TransactionProject.Api.Features.Base;
-
+  
   public class MakeAssetTransactionApiRequest : BaseRequest, IRequest<MakeAssetTransactionApiResponse>
   {
-    public const string MakeTransactionEndpoint = "makeTransaction?api_key="; // + ApiKey;
+    public const string MakeTransactionEndpoint = "makeTransaction?api_key=" + TempApiKey.ApiKey; 
     public const string Route = "api/MakeTransaction";
 
     /// <summary>

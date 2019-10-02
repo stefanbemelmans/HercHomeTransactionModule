@@ -8,7 +8,7 @@
   /// </summary>
   public class ReturnListOfAssetsApiRequest : BaseRequest, IRequest<ReturnListOfAssetsApiResponse>
   {
-    public const string ReturnListOfAssetsEndPoint = "list?api_key=[*insert key here*]";
+    public const string ReturnListOfAssetsEndPoint = "list?api_key=" + TempApiKey.ApiKey;
     public const string Route = "api/returnListOfAssets";
   }
 }

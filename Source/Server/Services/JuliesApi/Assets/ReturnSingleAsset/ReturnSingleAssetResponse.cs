@@ -1,7 +1,7 @@
-﻿using TransactionProject.Api.Features.JuliesApi;
-
-namespace TransactionProject.Server.Services.JuliesApi
+﻿namespace TransactionProject.Server.Services.JuliesApi
 {
+  using TransactionProject.Api.Features.JuliesApi;
+
   public class ReturnSingleAssetResponse
   {
     public AssetDefinitionDto SingleAsset { get; set; }
