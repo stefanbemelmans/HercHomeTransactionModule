@@ -23,7 +23,7 @@
     {
       ReturnListOfAssetsResponse aReturnListOfAssetsResponse = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
 
-      return new ReturnListOfAssetsResponse { ListOfAssets = aReturnListOfAssetsResponse.ListOfAssets };
+      return new ReturnListOfAssetsResponse { ListOfAssetHeaders = aReturnListOfAssetsResponse.ListOfAssetHeaders };
     }
   }
 }

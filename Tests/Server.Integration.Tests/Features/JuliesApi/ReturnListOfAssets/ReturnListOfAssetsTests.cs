@@ -1,10 +1,12 @@
 ﻿namespace TransactionProject.Server.Integration.Tests.Features.JuliesApi
 {
   using MediatR;
+  using Microsoft.AspNetCore.Components;
   using Microsoft.Extensions.DependencyInjection;
   using Shouldly;
   using System;
   using System.Threading.Tasks;
+  using TransactionProject.Api.Features.JuliesApi;
   using TransactionProject.Server.Integration.Tests.Infrastructure;
   using TransactionProject.Server.Services.JuliesApi;
 
@@ -33,34 +35,55 @@
       continuation.ShouldBe("OK");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
     }
 
-    //public async Task ShouldGetAllAssets()
+    public async Task ShouldTouchAssetListEndpoint()
+    {
+      // Arrange
+
+      //Act
+      object response = await JuliesApi.GetAsync(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
+      //Assert
+      response.ShouldNotBe(null);
+    }
+
+
+    public async Task ShouldGetAssetListFromHttpEndpoint()
+    {
+      // Arrange
+
+      //Act
+      ReturnListOfAssetsResponse response = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
+      //Assert
+      response.ShouldNotBe(null);
+     
+    }
+
+
+    //public async Task ShouldGetListOfAssetFromService()
     //{
     //  // Arrange
-    //  var getAllAssetsRequest = new ReturnListOfAssetsRequest();
-
+    // var returnListOfAssetsRequest = new ReturnListOfAssetsRequest();
     //  //Act
-    //  ReturnListOfAssetsResponse getAllAssetsResponse =
-    //    await Mediator.Send(getAllAssetsRequest);
+    //  ReturnListOfAssetsResponse getListOfAssetsResponse =
+    //    await Mediator.Send(returnListOfAssetsRequest);
 
     //  //Assert
-    //  getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
+    //  getListOfAssetsResponse.ListOfAssetHeaders.Count.ShouldBeGreaterThan(0);
     //}
-
-    //  public async Task ShouldGetSingleAsset()
+    //public async Task ShouldGetSingleAsset()
+    //{
+    //  // Arrange
+    //  var getSingleAssetRequest = new ReturnSingleAssetRequest
     //  {
-    //    // Arrange
-    //    var getSingleAssetRequest = new ReturnSingleAssetRequest
-    //    {
-    //      AssetKey = ""
-    //    };
+    //    AssetKey = ""
+    //  };
 
-    //    //Act
-    //    ReturnSingleAssetResponse getSingleAssetResponse =
-    //      await Mediator.Send(getSingleAssetRequest);
+    //  //Act
+    //  ReturnSingleAssetResponse getSingleAssetResponse =
+    //    await Mediator.Send(getSingleAssetRequest);
 
-    //    //Assert
-    //    getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
-    //  }
+    //  //Assert
+    //  getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
+    //}
     //  public async Task ShouldGetAllAssetTransactions()
     //  {
     //    // Arrange

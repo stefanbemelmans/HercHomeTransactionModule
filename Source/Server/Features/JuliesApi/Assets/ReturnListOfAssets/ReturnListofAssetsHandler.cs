@@ -27,7 +27,7 @@
 
       return new ReturnListOfAssetsApiResponse
       {
-        ListOfAssets = returnListOfAssetsApiResponse.ListOfAssets
+        ListOfAssetHeaders = returnListOfAssetsApiResponse.ListOfAssetHeaders
       };
     }
   }
