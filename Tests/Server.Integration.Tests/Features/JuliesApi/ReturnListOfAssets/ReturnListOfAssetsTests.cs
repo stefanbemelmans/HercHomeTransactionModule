@@ -30,7 +30,7 @@
       Task<System.Net.Http.HttpResponseMessage> responseTask = JuliesApi.GetAsync("/health");
       string continuation = responseTask.Result.StatusCode.ToString();
       //Assert
-      continuation.ShouldBe("200");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
+      continuation.ShouldBe("OK");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
     }
 
     //public async Task ShouldGetAllAssets()
