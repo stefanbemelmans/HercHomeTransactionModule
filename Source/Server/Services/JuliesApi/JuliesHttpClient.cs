@@ -5,7 +5,7 @@
 
   public class JuliesApiHttpClient : HttpClient
   {
-    public string BaseUrl = "http://api.herc.one/assets/";
+    public string BaseUrl = "http://api.herc.one:8000/";
     
     public JuliesApiHttpClient()
     {

@@ -4,6 +4,6 @@
 
   public class ReturnListOfAssetsRequest : IRequest<ReturnListOfAssetsResponse>
     {
-        // ApiKey
+       public ReturnListOfAssetsRequest() { }
     }
 }

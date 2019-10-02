@@ -5,9 +5,9 @@
   using TransactionProject.Api.Features.WeatherForecast;
   using Microsoft.AspNetCore.Mvc;
 
-  [Route(GeTransactionsRequest.Route)]
-  public class GetWeatherForecastsController : BaseController<GeTransactionsRequest, GetWeatherForecastResponse>
+  [Route(GetWeatherForecastRequest.Route)]
+  public class GetWeatherForecastsController : BaseController<GetWeatherForecastRequest, GetWeatherForecastResponse>
   {
-    public async Task<IActionResult> Process(GeTransactionsRequest aRequest) => await Send(aRequest);
+    public async Task<IActionResult> Process(GetWeatherForecastRequest aRequest) => await Send(aRequest);
   }
 }

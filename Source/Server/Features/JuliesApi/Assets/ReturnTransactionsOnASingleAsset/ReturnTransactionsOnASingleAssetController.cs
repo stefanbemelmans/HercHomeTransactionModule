@@ -4,7 +4,7 @@
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
   using TransactionProject.Server.Features.Base;
-
+  [Route(ReturnTransactionsOnASingleAssetApiRequest.Route)]
   public class ReturnTransactionsOnASingleAssetController : BaseController<ReturnTransactionsOnASingleAssetApiRequest, ReturnTransactionsOnASingleAssetApiResponse>
   {
     public async Task<IActionResult> Process(ReturnTransactionsOnASingleAssetApiRequest aRequest) => await Send(aRequest);

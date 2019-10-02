@@ -26,9 +26,9 @@
         CancellationToken aCancellationToken
       )
       {
-        var getWeatherForecastsRequest = new GeTransactionsRequest { Days = 10 };
+        var getWeatherForecastsRequest = new GetWeatherForecastRequest { Days = 10 };
         GetWeatherForecastResponse getWeatherForecastsResponse =
-          await HttpClient.PostJsonAsync<GetWeatherForecastResponse>(GeTransactionsRequest.Route, getWeatherForecastsRequest);
+          await HttpClient.PostJsonAsync<GetWeatherForecastResponse>(GetWeatherForecastRequest.Route, getWeatherForecastsRequest);
         WeatherForecastsState._WeatherForecasts = getWeatherForecastsResponse.WeatherForecasts;
         return Unit.Value;
       }
