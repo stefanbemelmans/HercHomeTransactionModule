@@ -51,7 +51,7 @@
       // Arrange
 
       //Act
-      ReturnListOfAssetsResponse response = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
+      object response = await JuliesApi.GetJsonAsync<object>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
       //Assert
       response.ShouldNotBe(null);
      

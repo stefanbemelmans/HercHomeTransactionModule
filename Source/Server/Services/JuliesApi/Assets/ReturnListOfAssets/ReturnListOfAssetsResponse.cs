@@ -5,6 +5,6 @@
 
   public class ReturnListOfAssetsResponse
   {
-    public List<AssetHeader> ListOfAssetHeaders { get; set; }
+    public List<AssetHeader> AssetList { get; set; }
   }
 }
