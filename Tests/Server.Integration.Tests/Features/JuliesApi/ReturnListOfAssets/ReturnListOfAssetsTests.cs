@@ -21,16 +21,16 @@
       JuliesApi = ServiceProvider.GetService<JuliesApiHttpClient>();
     }
 
-    public void ShouldGetAllAssetsFromApi()
+    public void ShouldTouchTheApi()
     {
       // Arrange
-
+      string code = string.Empty;
       //Act
       //ReturnListOfAssetsResponse getAllAssetsResponse = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
-      string response = JuliesApi.GetAsync<string>("/health");
+      Task<System.Net.Http.HttpResponseMessage> responseTask = JuliesApi.GetAsync("/health");
+      string continuation = responseTask.Result.StatusCode.ToString();
       //Assert
-      response.ShouldNotBe(null);
-      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
+      continuation.ShouldBe("200");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
     }
 
     //public async Task ShouldGetAllAssets()
