@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Client\TransactionProject.Client.csproj" />
     <ProjectReference Include="..\Api\TransactionProject.Api.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\JuliesApi\Assets\NewFolder\" />
+  </ItemGroup>
 </Project>

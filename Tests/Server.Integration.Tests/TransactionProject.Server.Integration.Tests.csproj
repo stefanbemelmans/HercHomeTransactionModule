@@ -17,4 +17,8 @@
     <ProjectReference Include="..\..\Source\Api\TransactionProject.Api.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\JuliesApi\" />
+  </ItemGroup>
+
 </Project>

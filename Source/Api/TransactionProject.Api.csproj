@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\JuliesApi\AssetTransaction\GetAssetTransaction\" />
+    <Folder Include="Features\JuliesApi\AssetTransaction\ReturnSingletAsset\" />
   </ItemGroup>
 </Project>
