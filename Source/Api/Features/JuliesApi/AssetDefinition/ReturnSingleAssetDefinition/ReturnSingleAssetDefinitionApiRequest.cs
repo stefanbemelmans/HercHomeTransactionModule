@@ -9,7 +9,7 @@
   public class ReturnSingleAssetDefintionApiRequest : BaseRequest, IRequest<ReturnSingleAssetDefinitionApiResponse>
   {
     public const string Route = "api/ReturnSingleAssetDefinition";
-    public const string ReturnSingleAssetDefinitionEndpoint = "assets/single?api-key=" + TempApiKey.ApiKey;
+    public const string ReturnSingleAssetDefinitionEndpoint = "assets/single/api_key=" + TempApiKey.ApiKey;
     /// <summary>
     /// The AssetDefinition Key to get. 
     /// </summary>

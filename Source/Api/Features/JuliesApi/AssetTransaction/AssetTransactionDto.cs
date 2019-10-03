@@ -8,7 +8,7 @@ namespace TransactionProject.Api.Features.JuliesApi
 
     public Header Header { get; set; }
 
-    public int TransactionKey { get; set; }
+    public string TransactionKey { get; set; }
 
     public AssetTransactionDto() { }
   }

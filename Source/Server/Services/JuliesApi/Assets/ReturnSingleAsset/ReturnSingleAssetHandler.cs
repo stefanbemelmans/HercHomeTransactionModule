@@ -21,7 +21,7 @@
       CancellationToken aCancellationToken
       )
     {
-      ReturnSingleAssetResponse aReturnSingleAssetResponse = await JuliesApi.GetJsonAsync<ReturnSingleAssetResponse>(ReturnSingleAssetDefintionApiRequest.Route);
+      ReturnSingleAssetResponse aReturnSingleAssetResponse = await JuliesApi.GetJsonAsync<ReturnSingleAssetResponse>(ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint);
 
       return new ReturnSingleAssetResponse { SingleAsset = aReturnSingleAssetResponse.SingleAsset };
     }
