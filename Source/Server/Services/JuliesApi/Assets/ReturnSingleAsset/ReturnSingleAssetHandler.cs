@@ -23,7 +23,7 @@
       CancellationToken aCancellationToken
       )
     {
-      object response = await JuliesApi.SendJsonAsync<ReturnSingleAssetResponse>(
+      object response = await JuliesApi.SendJsonAsync<object>(
         HttpMethod.Get,
         ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint,
         new ReturnSingleAssetRequest { AssetKey = aReturnSingleAssetRequest.AssetKey }
