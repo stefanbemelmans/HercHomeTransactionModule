@@ -21,7 +21,7 @@
       CancellationToken aCancellationToken
       )
     {
-      ReturnTransactionsOnASingleAssetResponse getAssetTransactionsRequest = await JuliesApi.PostJsonAsync<ReturnTransactionsOnASingleAssetResponse>(ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransEndpoint, new ReturnTransactionsOnASingleAssetRequest
+      ReturnTransactionsOnASingleAssetResponse getAssetTransactionsRequest = await JuliesApi.PostJsonAsync<ReturnTransactionsOnASingleAssetResponse>(ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, new ReturnTransactionsOnASingleAssetRequest
       {
         AssetKey = aReturnTransactionsOnASingleAssetRequest.AssetKey
       });

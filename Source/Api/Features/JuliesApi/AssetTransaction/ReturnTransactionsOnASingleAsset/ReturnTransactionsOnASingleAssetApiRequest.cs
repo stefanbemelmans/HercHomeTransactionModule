@@ -6,7 +6,7 @@ namespace TransactionProject.Api.Features.JuliesApi
   public class ReturnTransactionsOnASingleAssetApiRequest : BaseRequest, IRequest<ReturnTransactionsOnASingleAssetApiResponse>
     {
        public const string Route = "api/GetAssetTransactions";
-       public const string GetAssetTransEndpoint = "list?api_key=[*insert key here*]";
+       public const string GetAssetTransactionsEndpoint = "assets/transactions?api_key=" + TempApiKey.ApiKey;
 
        public string AssetKey { get; set; }
     }

@@ -9,7 +9,7 @@
   public class ReturnSingleAssetTransactionApiRequest : BaseRequest, IRequest<ReturnSingleAssetTransactionApiResponse>
   {
     public const string Route = "api/ReturnSingleAssetTransaction";
-
+    public const string ReturnSingleAssetTransactionEndpoint = "/assets/transactions/single?api_key=" + TempApiKey.ApiKey;
     /// <summary>
     /// The AssetTransaction Key to get. 
     /// </summary>

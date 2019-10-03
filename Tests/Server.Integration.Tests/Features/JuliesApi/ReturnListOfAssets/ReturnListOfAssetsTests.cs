@@ -74,7 +74,7 @@
     //  // Arrange
     //  var getSingleAssetRequest = new ReturnSingleAssetRequest
     //  {
-    //    AssetKey = ""
+    //    AssetKey = "-LpAAEgyzH-3wInbcYCM"
     //  };
 
     //  //Act
@@ -83,6 +83,7 @@
 
     //  //Assert
     //  getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
+    //  getSingleAssetResponse.SingleAsset.Transactions.Count.ShouldBeGreaterThan(0);
     //}
     //  public async Task ShouldGetAllAssetTransactions()
     //  {
