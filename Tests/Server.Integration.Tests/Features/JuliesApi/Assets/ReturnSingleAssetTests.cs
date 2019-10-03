@@ -58,22 +58,22 @@
       response.ShouldNotBe(null);
     }
 
-    //public async Task ShouldGetSingleAssetFromService()
-    //{
-    //  //Arrange
-    //  var getSingleAssetRequest = new ReturnSingleAssetRequest
-    //  {
-    //    AssetKey = "-LpAAEgyzH-3wInbcYCM"
-    //  };
+    public async Task ShouldGetSingleAssetFromService()
+    {
+      //Arrange
+      var getSingleAssetRequest = new ReturnSingleAssetRequest
+      {
+        AssetKey = "-LpAAEgyzH-3wInbcYCM"
+      };
 
-    //  // Act
-    //  ReturnSingleAssetResponse getSingleAssetResponse =
-    //    await Mediator.Send(getSingleAssetRequest);
+      // Act
+      ReturnSingleAssetResponse getSingleAssetResponse =
+        await Mediator.Send(getSingleAssetRequest);
 
-    //  // Assert
-    //  getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
-    //  getSingleAssetResponse.SingleAsset.Transactions.Count.ShouldBeGreaterThan(0);
-    //}
+      // Assert
+      getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetHeaderDto>();
+      getSingleAssetResponse.SingleAsset.HercId.ShouldBe(404);
+    }
 
     //public void ShouldReturnSingleAssetFromService()
     //{

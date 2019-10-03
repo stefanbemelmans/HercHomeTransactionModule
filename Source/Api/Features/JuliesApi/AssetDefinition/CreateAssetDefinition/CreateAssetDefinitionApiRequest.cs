@@ -10,5 +10,6 @@
     public const string Route = "api/CreateAssetDef";
 
     public AssetDefinitionDto AssetDefinitionDto { get; set; }
+    public CreateAssetDefinitionApiRequest() { }
   }
 }

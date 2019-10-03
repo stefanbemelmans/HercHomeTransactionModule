@@ -2,6 +2,7 @@
 {
   using MediatR;
   using Microsoft.AspNetCore.Components;
+  using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
@@ -21,10 +22,8 @@
        CancellationToken aCancellationToken
      )
     {
-      CreateAssetDefinitionResponse assetDefCreateResponse = await JuliesApi.PostJsonAsync<CreateAssetDefinitionResponse>(CreateAssetDefinitionApiRequest.CreateAssetEndpoint, new CreateAssetDefinitionRequest
-      {
-        AssetDefinition = aCreateAssetRequest.AssetDefinition
-      });
+      CreateAssetDefinitionResponse assetDefCreateResponse = await JuliesApi.SendJsonAsync<CreateAssetDefinitionResponse>(HttpMethod.Post, CreateAssetDefinitionApiRequest.CreateAssetEndpoint, aCreateAssetRequest);
+       
       return assetDefCreateResponse;
     }
   }

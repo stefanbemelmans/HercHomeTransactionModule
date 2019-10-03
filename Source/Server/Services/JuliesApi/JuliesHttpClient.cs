@@ -1,6 +1,7 @@
 ﻿namespace TransactionProject.Server.Services.JuliesApi
 {
-  using Microsoft.AspNetCore.Blazor.Http;
+  using Microsoft.AspNetCore.Components;
+  using System;
   using System.Net.Http;
 
   public class JuliesApiHttpClient : HttpClient
@@ -11,5 +12,6 @@
     {
       BaseAddress = new System.Uri(BaseUrl);
     }
+       
   }
 }
