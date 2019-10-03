@@ -11,7 +11,7 @@
     /// <summary>
     /// The AssetTransaction requested if found else null.
     /// </summary>
-    public AssetTransactionDto AssetTransaction { get; set; }
+    public AssetHeaderDto AssetTransaction { get; set; }
 
     public ReturnSingleAssetTransactionApiResponse() { }
 

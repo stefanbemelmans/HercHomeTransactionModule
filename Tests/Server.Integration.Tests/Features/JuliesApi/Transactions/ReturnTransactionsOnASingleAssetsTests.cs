@@ -5,7 +5,9 @@
   using Microsoft.Extensions.DependencyInjection;
   using Shouldly;
   using System;
+  using System.Collections.Generic;
   using System.Net.Http;
+  using System.Text.Json;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
   using TransactionProject.Server.Integration.Tests.Infrastructure;
@@ -24,29 +26,6 @@
       JuliesApi = ServiceProvider.GetService<JuliesApiHttpClient>();
     }
 
-    public void ShouldTouchTheApi()
-    {
-      // Arrange
-      string code = string.Empty;
-      //Act
-      //ReturnListOfAssetsResponse getAllAssetsResponse = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
-      Task<System.Net.Http.HttpResponseMessage> responseTask = JuliesApi.GetAsync("/health");
-      string continuation = responseTask.Result.StatusCode.ToString();
-      //Assert
-      continuation.ShouldBe("OK");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
-    }
-
-    public async Task ShouldTouchGetAllTransactionsEndpoint()
-    {
-      // Arrange
-
-      //Act
-      object response = await JuliesApi.GetAsync(ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint);
-      //Assert
-      response.ShouldNotBe(null);
-    }
-
-
     public async Task ShouldGetAllTransactionsFromEndpoint()
     {
       // Arrange
@@ -55,7 +34,21 @@
       object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
       //Assert
       response.ShouldNotBe(null);
-     
+      string responseString = response.ToString();
+      List<AssetHeaderDto> SerializedListOfTransactions = JsonSerializer.Deserialize<List<AssetHeaderDto>>(responseString);
+      SerializedListOfTransactions.Count.ShouldBeGreaterThan(2);
+    }
+
+    public async Task ShouldGetAllTransactionsFromService()
+    {
+      // Arrange
+      var getAllTransactionsRequest = new ReturnTransactionsOnASingleAssetRequest { AssetKey = "-LemR9cH3FEKwqhAHLLW" };
+      //Act
+      ReturnTransactionsOnASingleAssetResponse getListOfAssetTransactions =
+        await Mediator.Send(getAllTransactionsRequest);
+
+      //Assert
+      getListOfAssetTransactions.AssetTransactionList.Count.ShouldBeGreaterThan(0);
     }
 
     public async Task ShouldSerializeAllTransactionsIntoTxType()
@@ -69,21 +62,20 @@
       //Assert
       response.ShouldNotBe(null);
       response.AssetTransactionList.Count.ShouldBeGreaterThan(0);
-
     }
 
-
-    public async Task ShouldGetAllTransactionsFromService()
+    public void ShouldTouchTheApi()
     {
       // Arrange
-      var getAllTransactionsRequest = new ReturnTransactionsOnASingleAssetRequest { AssetKey = "-LemR9cH3FEKwqhAHLLW" };
+      string code = string.Empty;
       //Act
-      ReturnTransactionsOnASingleAssetResponse getListOfAssetTransactions =
-        await Mediator.Send(getAllTransactionsRequest);
-
+      //ReturnListOfAssetsResponse getAllAssetsResponse = await JuliesApi.GetJsonAsync<ReturnListOfAssetsResponse>(ReturnListOfAssetsApiRequest.ReturnListOfAssetsEndPoint);
+      Task<System.Net.Http.HttpResponseMessage> responseTask = JuliesApi.GetAsync("/health");
+      string continuation = responseTask.Result.StatusCode.ToString();
       //Assert
-      getListOfAssetTransactions.AssetTransactionList.Count.ShouldBeGreaterThan(0);
+      continuation.ShouldBe("OK");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
     }
+
     //public async Task ShouldGetSingleAsset()
     //{
     //  // Arrange

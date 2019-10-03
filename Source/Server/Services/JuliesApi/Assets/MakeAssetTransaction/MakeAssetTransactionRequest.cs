@@ -5,11 +5,11 @@
 
   public class MakeAssetTransactionRequest : IRequest<MakeAssetTransactionResponse>
   {
-    public AssetTransactionDto AssetTransaction { get; set; }
+    public AssetHeaderDto AssetTransaction { get; set; }
 
     public MakeAssetTransactionRequest()
     {
-      AssetTransaction = new AssetTransactionDto();
+      AssetTransaction = new AssetHeaderDto();
     }
 
     //public byte[] Base64Document { get; set; }

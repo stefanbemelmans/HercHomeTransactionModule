@@ -5,6 +5,6 @@ namespace TransactionProject.Api.Features.JuliesApi
 
     public class ReturnTransactionsOnASingleAssetApiResponse : BaseResponse
     {
-        public AssetTransactionDto AssetTransactionList { get; set; }
+        public AssetHeaderDto AssetTransactionList { get; set; }
     }
 }

@@ -5,6 +5,8 @@
   using Microsoft.Extensions.DependencyInjection;
   using Shouldly;
   using System;
+  using System.Net.Http;
+  using System.Text.Json;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
   using TransactionProject.Server.Integration.Tests.Infrastructure;
@@ -12,7 +14,7 @@
 
   internal class ReturnSingleAssetTests
   {
-    //private readonly JuliesApiHttpClient JuliesApi;
+    private readonly JuliesApiHttpClient JuliesApi;
     private readonly IMediator Mediator;
     private readonly IServiceProvider ServiceProvider;
 
@@ -20,26 +22,59 @@
     {
       ServiceProvider = aTestFixture.ServiceProvider;
       Mediator = ServiceProvider.GetService<IMediator>();
-      //JuliesApi = ServiceProvider.GetService<JuliesApiHttpClient>();
+      JuliesApi = ServiceProvider.GetService<JuliesApiHttpClient>();
     }
 
-
-    public async Task ShouldGetSingleAsset()
+    public async Task ShouldDeserializeSingleAssetFromEndpoint()
     {
-      //Arrange
-     var getSingleAssetRequest = new ReturnSingleAssetRequest
-     {
-       AssetKey = "-LpAAEgyzH-3wInbcYCM"
-     };
+      // Arrange
+      var getSingleAssetRequest = new ReturnSingleAssetRequest
+      {
+        AssetKey = "-LpAAEgyzH-3wInbcYCM"
+      };
 
-     // Act
-      ReturnSingleAssetResponse getSingleAssetResponse =
-        await Mediator.Send(getSingleAssetRequest);
+      // Act
+      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint, getSingleAssetRequest);
+      // Assert
+      response.ShouldNotBe(null);
+      string responseString = response.ToString();
+      AssetHeaderDto aSingleAsset = JsonSerializer.Deserialize<AssetHeaderDto>(responseString);
 
-     // Assert
-      getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
-      getSingleAssetResponse.SingleAsset.Transactions.Count.ShouldBeGreaterThan(0);
+      aSingleAsset.CreatedBy.ShouldNotBeNull();
+      aSingleAsset.ShouldBeOfType<AssetHeaderDto>();
     }
+
+    public async Task ShouldTouchSingleAssetEndpoint()
+    {
+      // Arrange
+      var getSingleAssetRequest = new ReturnSingleAssetRequest
+      {
+        AssetKey = "-LpAAEgyzH-3wInbcYCM"
+      };
+
+      // Act
+      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint, getSingleAssetRequest);
+      // Assert
+      response.ShouldNotBe(null);
+    }
+
+    //public async Task ShouldGetSingleAssetFromService()
+    //{
+    //  //Arrange
+    //  var getSingleAssetRequest = new ReturnSingleAssetRequest
+    //  {
+    //    AssetKey = "-LpAAEgyzH-3wInbcYCM"
+    //  };
+
+    //  // Act
+    //  ReturnSingleAssetResponse getSingleAssetResponse =
+    //    await Mediator.Send(getSingleAssetRequest);
+
+    //  // Assert
+    //  getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
+    //  getSingleAssetResponse.SingleAsset.Transactions.Count.ShouldBeGreaterThan(0);
+    //}
+
     //public void ShouldReturnSingleAssetFromService()
     //{
     //  // Arrange
@@ -61,7 +96,6 @@
     //  response.ShouldNotBe(null);
     //}
 
-
     //public async Task ShouldGetAssetListFromHttpEndpoint()
     //{
     //  Arrange
@@ -72,7 +106,6 @@
     //  response.ShouldNotBe(null);
 
     //}
-
 
     //public async Task ShouldGetListOfAssetFromService()
     //{

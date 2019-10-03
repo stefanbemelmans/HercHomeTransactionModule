@@ -2,9 +2,9 @@
 
 namespace TransactionProject.Api.Features.JuliesApi
 {
-  public class AssetHeader
+  public class AssetHeaderDto
   {
-    public AssetHeader()
+    public AssetHeaderDto()
     {
       Hashes = new Hashes();
       Transactions = new List<AssetTransactionDto>();
