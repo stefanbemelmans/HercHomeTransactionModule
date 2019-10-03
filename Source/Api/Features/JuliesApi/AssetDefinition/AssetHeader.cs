@@ -1,10 +1,13 @@
-﻿namespace TransactionProject.Api.Features.JuliesApi
+﻿using System.Collections.Generic;
+
+namespace TransactionProject.Api.Features.JuliesApi
 {
   public class AssetHeader
   {
     public AssetHeader()
     {
       Hashes = new Hashes();
+      Transactions = new List<AssetTransactionDto>();
     }
     public string CreatedBy { get; set; }
     public Hashes Hashes { get; set; } 
@@ -13,7 +16,8 @@
     public string Logo { get; set; }
     public string Name { get; set; }
     public string Password { get; set; }
-    public bool Public { get; set; }
+    public object Public { get; set; }
+    public List<AssetTransactionDto> Transactions { get; set; }
   }
 
   public class Hashes

@@ -58,17 +58,17 @@
     }
 
 
-    //public async Task ShouldGetListOfAssetFromService()
-    //{
-    //  // Arrange
-    // var returnListOfAssetsRequest = new ReturnListOfAssetsRequest();
-    //  //Act
-    //  ReturnListOfAssetsResponse getListOfAssetsResponse =
-    //    await Mediator.Send(returnListOfAssetsRequest);
+    public async Task ShouldGetListOfAssetFromService()
+    {
+      // Arrange
+      var returnListOfAssetsRequest = new ReturnListOfAssetsRequest();
+      //Act
+      ReturnListOfAssetsResponse getListOfAssetsResponse =
+        await Mediator.Send(returnListOfAssetsRequest);
 
-    //  //Assert
-    //  getListOfAssetsResponse.ListOfAssetHeaders.Count.ShouldBeGreaterThan(0);
-    //}
+      //Assert
+      getListOfAssetsResponse.AssetList.Count.ShouldBeGreaterThan(0);
+    }
     //public async Task ShouldGetSingleAsset()
     //{
     //  // Arrange

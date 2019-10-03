@@ -4,11 +4,11 @@
 
   public class ReturnSingleAssetResponse
   {
-    public AssetDefinitionDto SingleAsset { get; set; }
+    public AssetHeader SingleAsset { get; set; }
 
     public ReturnSingleAssetResponse()
     {
-      SingleAsset = new AssetDefinitionDto();
+      SingleAsset = new AssetHeader();
     }
   }
 }
