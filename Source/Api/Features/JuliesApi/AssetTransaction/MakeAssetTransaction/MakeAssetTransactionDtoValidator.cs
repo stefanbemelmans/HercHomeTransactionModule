@@ -3,9 +3,9 @@
   using FluentValidation;
   using System.Linq;
 
-  public class AssetTransactionDtoValidator : AbstractValidator<AssetTransactionDto>
+  public class MakeAssetTransactionDtoValidator : AbstractValidator<MakeAssetTransactionDto>
   {
-    public AssetTransactionDtoValidator()
+    public MakeAssetTransactionDtoValidator()
     {
       RuleFor(aAssetTransactionDto => aAssetTransactionDto.AssetKey)
         .NotEmpty();

@@ -13,7 +13,7 @@
     /// </summary>
     ///
 
-    public AssetTransactionDto AssetTransactionDto { get; set; }
+    public MakeAssetTransactionDto MakeAssetTransactionDto { get; set; }
     //public string AssetKey { get; set; }
     //public byte[] Base64Document { get; set; }
     //public string EDit { get; set; }

@@ -22,7 +22,7 @@
     {
       MakeAssetTransactionApiResponse createTransactionResponse = await Mediator.Send(new MakeAssetTransactionApiRequest
       {
-        AssetTransactionDto = aCreateTransactionRequest.AssetTransactionDto
+        MakeAssetTransactionDto = aCreateTransactionRequest.MakeAssetTransactionDto
       });
 
       return new MakeAssetTransactionApiResponse

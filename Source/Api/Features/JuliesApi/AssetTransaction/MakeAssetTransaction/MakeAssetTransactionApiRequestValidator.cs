@@ -7,8 +7,8 @@
   {
     public MakeAssetTransactionApiRequestValidatorCollection()
     {
-      RuleFor(aMakeTransactionApiRequest => aMakeTransactionApiRequest.AssetTransactionDto)
-        .SetValidator(new AssetTransactionDtoValidator());
+      RuleFor(aMakeTransactionApiRequest => aMakeTransactionApiRequest.MakeAssetTransactionDto)
+        .SetValidator(new MakeAssetTransactionDtoValidator());
     }
   }
 }
