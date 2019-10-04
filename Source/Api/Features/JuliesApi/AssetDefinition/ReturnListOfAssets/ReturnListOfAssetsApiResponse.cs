@@ -16,6 +16,6 @@
     /// <summary>
     /// The AssetDefintion requested if found else null.
     /// </summary>
-    public List<AssetHeaderDto> ListOfAssetHeaders { get; set; }
+    public List<SingleAssetHeaderDto> ListOfAssetHeaders { get; set; }
   }
 }

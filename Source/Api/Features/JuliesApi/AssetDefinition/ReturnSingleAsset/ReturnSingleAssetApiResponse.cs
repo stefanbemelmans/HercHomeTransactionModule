@@ -6,15 +6,15 @@
   /// <summary>
   /// Returns the AssetDefinitionDto if found
   /// </summary>
-  public class ReturnSingleAssetDefinitionApiResponse : BaseResponse
+  public class ReturnSingleAssetApiResponse : BaseResponse
   {
     /// <summary>
     /// The AssetDefintion requested if found else null.
     /// </summary>
     public AssetDefinitionDto AssetDefinition { get; set; }
 
-    public ReturnSingleAssetDefinitionApiResponse() { }
+    public ReturnSingleAssetApiResponse() { }
 
-    public ReturnSingleAssetDefinitionApiResponse(Guid aRequestId) : base(aRequestId) { }
+    public ReturnSingleAssetApiResponse(Guid aRequestId) : base(aRequestId) { }
   }
 }

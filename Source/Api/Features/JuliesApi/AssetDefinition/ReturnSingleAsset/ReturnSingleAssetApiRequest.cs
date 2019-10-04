@@ -6,10 +6,10 @@
   /// <summary>
   /// Get an AssetDefinition by AssetKey
   /// </summary>
-  public class ReturnSingleAssetDefintionApiRequest : BaseRequest, IRequest<ReturnSingleAssetDefinitionApiResponse>
+  public class ReturnSingleAssetApiRequest : BaseRequest, IRequest<ReturnSingleAssetApiResponse>
   {
-    public const string Route = "api/ReturnSingleAssetDefinition";
-    public const string ReturnSingleAssetDefinitionEndpoint = "assets/single?api_key=" + TempApiKey.ApiKey;
+    public const string Route = "api/ReturnSingleAsset";
+    public const string ReturnSingleAssetEndpoint = "assets/single?api_key=" + TempApiKey.ApiKey;
     /// <summary>
     /// The AssetDefinition Key to get. 
     /// </summary>

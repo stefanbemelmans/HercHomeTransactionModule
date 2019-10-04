@@ -35,7 +35,7 @@
       //Assert
       response.ShouldNotBe(null);
       string responseString = response.ToString();
-      List<AssetHeaderDto> SerializedListOfTransactions = JsonSerializer.Deserialize<List<AssetHeaderDto>>(responseString);
+      List<SingleAssetHeaderDto> SerializedListOfTransactions = JsonSerializer.Deserialize<List<SingleAssetHeaderDto>>(responseString);
       SerializedListOfTransactions.Count.ShouldBeGreaterThan(2);
     }
 

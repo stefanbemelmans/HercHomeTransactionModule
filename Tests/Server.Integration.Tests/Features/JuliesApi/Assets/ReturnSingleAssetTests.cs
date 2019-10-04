@@ -34,14 +34,14 @@
       };
 
       // Act
-      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint, getSingleAssetRequest);
+      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetApiRequest.ReturnSingleAssetEndpoint, getSingleAssetRequest);
       // Assert
       response.ShouldNotBe(null);
       string responseString = response.ToString();
-      AssetHeaderDto aSingleAsset = JsonSerializer.Deserialize<AssetHeaderDto>(responseString);
+      SingleAssetHeaderDto aSingleAsset = JsonSerializer.Deserialize<SingleAssetHeaderDto>(responseString);
 
       aSingleAsset.CreatedBy.ShouldNotBeNull();
-      aSingleAsset.ShouldBeOfType<AssetHeaderDto>();
+      aSingleAsset.ShouldBeOfType<SingleAssetHeaderDto>();
     }
 
     public async Task ShouldTouchSingleAssetEndpoint()
@@ -53,7 +53,7 @@
       };
 
       // Act
-      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint, getSingleAssetRequest);
+      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnSingleAssetApiRequest.ReturnSingleAssetEndpoint, getSingleAssetRequest);
       // Assert
       response.ShouldNotBe(null);
     }
@@ -71,7 +71,7 @@
         await Mediator.Send(getSingleAssetRequest);
 
       // Assert
-      getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetHeaderDto>();
+      getSingleAssetResponse.SingleAsset.ShouldBeOfType<SingleAssetHeaderDto>();
       getSingleAssetResponse.SingleAsset.HercId.ShouldBe(404);
     }
 

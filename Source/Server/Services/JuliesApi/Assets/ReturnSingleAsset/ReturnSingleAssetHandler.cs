@@ -23,15 +23,15 @@
       CancellationToken aCancellationToken
       )
     {
-      object response = await JuliesApi.SendJsonAsync<object>(
+      object jsonResponse = await JuliesApi.SendJsonAsync<object>(
         HttpMethod.Get,
-        ReturnSingleAssetDefintionApiRequest.ReturnSingleAssetDefinitionEndpoint,
+        ReturnSingleAssetApiRequest.ReturnSingleAssetEndpoint,
         new ReturnSingleAssetRequest { AssetKey = aReturnSingleAssetRequest.AssetKey }
         );
 
-      string responseString = response.ToString();
+      string responseString = jsonResponse.ToString();
 
-      AssetHeaderDto aSingleAsset = JsonSerializer.Deserialize<AssetHeaderDto>(responseString);
+      SingleAssetHeaderDto aSingleAsset = JsonSerializer.Deserialize<SingleAssetHeaderDto>(responseString);
 
       return new ReturnSingleAssetResponse { SingleAsset = aSingleAsset };
     }

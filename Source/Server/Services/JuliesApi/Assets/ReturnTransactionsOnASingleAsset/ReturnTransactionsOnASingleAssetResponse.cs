@@ -5,6 +5,6 @@
 
   public class ReturnTransactionsOnASingleAssetResponse
   {
-    public List<AssetHeaderDto> AssetTransactionList { get; set; }
+    public List<SingleAssetHeaderDto> AssetTransactionList { get; set; }
   }
 }
