@@ -5,15 +5,20 @@ namespace TransactionProject.Api.Features.JuliesApi
 {
   public class AssetTransactionDto
   {
+    public Transaction Transaction { get; set; }
     public string TransactionKey { get; set; }
+    //[JsonPropertyName("data")]
+    //public Data Data { get; set; }
 
-    [JsonPropertyName("data")]
-    public Data Data { get; set; }
+    //[JsonPropertyName("header")]
+    //public Header Header { get; set; }
 
-    [JsonPropertyName("header")]
-    public Header Header { get; set; }
-
-    public AssetTransactionDto() { }
+    public AssetTransactionDto()
+    {
+      Transaction = new Transaction();
+      //Data = new Data();
+      //Header = new Header();
+    }
   }
 
   public class Data
@@ -32,7 +37,6 @@ namespace TransactionProject.Api.Features.JuliesApi
 
     public Data() { }
   }
-
 
   public class Header
   {
@@ -58,5 +62,20 @@ namespace TransactionProject.Api.Features.JuliesApi
     public string TxSide { get; set; }
 
     public Header() { }
+  }
+
+  public class Transaction
+  {
+    [JsonPropertyName("data")]
+    public Data Data { get; set; }
+
+    [JsonPropertyName("header")]
+    public Header Header { get; set; }
+
+    public Transaction()
+    {
+      Header = new Header();
+      Data = new Data();
+    }
   }
 }
