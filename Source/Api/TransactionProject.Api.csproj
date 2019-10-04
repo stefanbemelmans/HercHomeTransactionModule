@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="$(MediatrVersion)" />
     <PackageReference Include="FluentValidation" Version="$(FluentValidation)" />
+    <PackageReference Include="System.Text.Json" Version="4.6.0" />
     <!--<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="12.2" />-->
     <!--<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersVersion)">
       <PrivateAssets>all</PrivateAssets>

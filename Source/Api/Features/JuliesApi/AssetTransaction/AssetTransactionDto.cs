@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace TransactionProject.Api.Features.JuliesApi
 {
   public class AssetTransactionDto
   {
+    [JsonPropertyName("data")]
     public Data Data { get; set; }
-
+    [JsonPropertyName("header")]
     public Header Header { get; set; }
 
     public string AssetKey { get; set; }
@@ -15,11 +17,16 @@ namespace TransactionProject.Api.Features.JuliesApi
 
   public class Data
   {
-    public string Document { get; set; }
-
+    [JsonPropertyName("documents")]
+    public string Documents { get; set; }
+    [JsonPropertyName("images")]
     public string Images { get; set; }
-
+    [JsonPropertyName("metrics")]
     public string Metrics { get; set; }
+    [JsonPropertyName("ediT")]
+    public string EDiT { get; set; }
+    public string GeoLocation { get; set; }
+
 
     public Data() { }
   }

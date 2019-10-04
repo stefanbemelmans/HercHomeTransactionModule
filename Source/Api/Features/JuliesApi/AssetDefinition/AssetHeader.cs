@@ -2,15 +2,15 @@
 namespace TransactionProject.Api.Features.JuliesApi
 {
   using System.Collections.Generic;
-  
-  
+  using System.Text.Json.Serialization;
+
   public class AssetHeaderDto
   {
     public string CreatedBy { get; set; }
 
     public Hashes Hashes { get; set; }
 
-    
+    [JsonPropertyName("hercId")]
     public int HercId { get; set; }
 
     public string Key { get; set; }
@@ -47,7 +47,7 @@ namespace TransactionProject.Api.Features.JuliesApi
   {
     public string CreatedBy { get; set; }
 
-    
+    [JsonPropertyName("hercId")]
     public int HercId { get; set; }
 
     public string Logo { get; set; }

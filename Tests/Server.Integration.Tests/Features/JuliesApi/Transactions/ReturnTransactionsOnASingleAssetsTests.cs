@@ -35,8 +35,8 @@
       //Assert
       response.ShouldNotBe(null);
       string responseString = response.ToString();
-      List<SingleAssetHeaderDto> SerializedListOfTransactions = JsonSerializer.Deserialize<List<SingleAssetHeaderDto>>(responseString);
-      SerializedListOfTransactions.Count.ShouldBeGreaterThan(2);
+      List<AssetTransactionDto> serializedListOfTransactions = JsonSerializer.Deserialize<List<AssetTransactionDto>>(responseString);
+      serializedListOfTransactions.Count.ShouldBeGreaterThan(2);
     }
 
     public async Task ShouldGetAllTransactionsFromService()
