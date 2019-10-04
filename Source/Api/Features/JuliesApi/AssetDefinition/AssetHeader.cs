@@ -7,7 +7,7 @@ namespace TransactionProject.Api.Features.JuliesApi
   public class AssetHeaderDto
   {
     public string CreatedBy { get; set; }
-
+    [JsonPropertyName("hashes")]
     public Hashes Hashes { get; set; }
 
     [JsonPropertyName("hercId")]
@@ -22,7 +22,7 @@ namespace TransactionProject.Api.Features.JuliesApi
     public string Password { get; set; }
 
     public object Public { get; set; }
-
+    [JsonPropertyName("transactions")]
     public List<AssetTransactionDto> Transactions { get; set; }
 
     public AssetHeaderDto()
