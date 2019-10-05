@@ -56,7 +56,7 @@ namespace TransactionProject.Api.Features.JuliesApi
     public string Name { get; set; }
 
     [JsonPropertyName("price")]
-    public string Price { get; set; }
+    public float Price { get; set; }
 
     [JsonPropertyName("txSide")]
     public string TxSide { get; set; }

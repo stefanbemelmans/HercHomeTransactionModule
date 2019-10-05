@@ -36,7 +36,7 @@
 
       //Act
       //object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
-      List<AssetTransactionDto> response = await JuliesApi.SendJsonAsync<List<AssetTransactionDto>>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
+      Dictionary<string, Transaction> response = await JuliesApi.SendJsonAsync<Dictionary<string, Transaction>>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
       //Assert
       response.ShouldNotBe(null);
 
