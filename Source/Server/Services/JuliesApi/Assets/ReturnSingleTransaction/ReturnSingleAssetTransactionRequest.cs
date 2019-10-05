@@ -1,9 +1,11 @@
 ﻿namespace TransactionProject.Server.Services.JuliesApi
 {
   using MediatR;
+  using System;
 
   public class ReturnSingleAssetTransactionRequest : IRequest<ReturnSingleAssetTransactionResponse>
   {
-    public string TransactionKey { get; set; }
+    public string assetKey { get; set; }
+    public long timestamp { get; set; }
   }
 }

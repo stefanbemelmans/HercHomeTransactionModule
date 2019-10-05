@@ -29,31 +29,31 @@
       JuliesApi = ServiceProvider.GetService<JuliesApiHttpClient>();
     }
 
-    public async Task ShouldGetAllTransactionsFromEndpoint()
-    {
-      // Arrange
-      var getAllTransactionsRequest = new ReturnTransactionsOnASingleAssetRequest { AssetKey = "-LemR9cH3FEKwqhAHLLW" };
+    //public async Task ShouldGetAllTransactionsFromEndpoint()
+    //{
+    //  // Arrange
+    //  var getAllTransactionsRequest = new ReturnTransactionsOnASingleAssetRequest { AssetKey = "-LemR9cH3FEKwqhAHLLW" };
 
-      var serializedListOfTransactions = new List<AssetTransactionDto>();
-      //Act
-      //object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
-      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
-      //Assert
-      response.ShouldNotBe(null);
-      string stringResponse = response.ToString();
+    //  var serializedListOfTransactions = new List<AssetTransactionDto>();
+    //  //Act
+    //  //object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
+    //  object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
+    //  //Assert
+    //  response.ShouldNotBe(null);
+    //  string stringResponse = response.ToString();
 
-      var docFromString = JsonDocument.Parse(stringResponse);
+    //  var docFromString = JsonDocument.Parse(stringResponse);
 
-      foreach (JsonProperty trans in docFromString.RootElement.EnumerateObject())
-      {
-        var FirstTransaction = new AssetTransactionDto
-        {
-          TransactionKey = trans.Name,
-         Transaction.Header = trans.GetProperty("header"),
+    //  foreach (JsonProperty trans in docFromString.RootElement.EnumerateObject())
+    //  {
+    //    var FirstTransaction = new AssetTransactionDto
+    //    {
+    //      TransactionKey = trans.Name,
+    //     Transaction.Header = trans.GetProperty("header"),
 
 
-      }
-      }
+    //  }
+    //  }
 
       //  foreach (KeyValuePair<string, JToken> trans in response)
       //  {
@@ -64,7 +64,7 @@
       //    });
       //  }
       //  serializedListOfTransactions.Count.ShouldBeGreaterThan(2);
-    }
+    //}
 
     //public async Task ShouldGetAllTransactionsFromService()
     //{
@@ -102,7 +102,22 @@
       //Assert
       continuation.ShouldBe("OK");      //getAllAssetsResponse.ListOfAssets.Count.ShouldBeGreaterThan(0);
     }
+    public async Task ShouldGetSingleAssetTransactionFromEndpoint()
+    {
+      // Arrange
+      var getSingleTransactionsRequest = new ReturnSingleAssetTransactionRequest
+      {
+        assetKey = "-LeFCweEsr2wZvEsWGkY",
+        timestamp = 1557675299267
+      };
 
+      //Act
+      AssetTransactionDto singleTransaction = await JuliesApi.SendJsonAsync<AssetTransactionDto>(HttpMethod.Get, ReturnSingleAssetTransactionApiRequest.ReturnSingleAssetTransactionEndpoint, getSingleTransactionsRequest);
+
+      //Assert
+      singleTransaction.ShouldNotBeNull();
+
+    }
     //public async Task ShouldGetSingleAsset()
     //{
     //  // Arrange
@@ -135,20 +150,6 @@
     //    getSingleAssetResponse.AssetTransactionList.ShouldBeOfType<List<AssetTransactionDto>>();
     //  }
 
-    //  public async Task ShouldGetSingleAssetTransaction()
-    //  {
-    //    // Arrange
-    //    var getTransactionsRequest = new ReturnSingleAssetTransactionRequest
-    //    {
-    //      TransactionKey = ""
-    //    };
-
-    //    //Act
-    //    ReturnSingleAssetTransactionResponse getSingleTransactionResponse =
-    //      await Mediator.Send(getTransactionsRequest);
-
-    //    //Assert
-    //    getSingleTransactionResponse.SingleTransaction.ShouldBeOfType<AssetTransactionDto>();
-    //  }
+    // 
   }
 }

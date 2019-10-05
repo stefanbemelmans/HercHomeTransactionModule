@@ -6,7 +6,8 @@
   {
     public ReturnSingleAssetTransactionApiRequestValidatorCollection()
     {
-      RuleFor(aGetAssetDefinitionApiRequest => aGetAssetDefinitionApiRequest.TransactionKey).GreaterThan(0);
+      RuleFor(aGetAssetDefinitionApiRequest => aGetAssetDefinitionApiRequest.timestamp).GreaterThan(0);
+      RuleFor(aGetAssetDefinitionApiRequest => aGetAssetDefinitionApiRequest.assetKey).NotNull();
     }
   }
 }

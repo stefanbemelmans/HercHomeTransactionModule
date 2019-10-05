@@ -13,6 +13,7 @@
     /// <summary>
     /// The AssetTransaction Key to get. 
     /// </summary>
-    public int TransactionKey { get; set; }
+    public int assetKey { get; set; }
+    public long timestamp { get; set; }
   }
 }
