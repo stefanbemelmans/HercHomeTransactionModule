@@ -10,6 +10,7 @@
   using System.Net.Mime;
   using System.Reflection;
   using TransactionProject.Server.Services.JuliesApi;
+  using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
   public class Startup
   {
@@ -45,6 +46,7 @@
       aServiceCollection.AddRazorPages();
       aServiceCollection.AddServerSideBlazor();
       aServiceCollection.AddMvc();
+      aServiceCollection.AddMvc().AddNewtonsoftJson();
 
       aServiceCollection.AddResponseCompression
       (

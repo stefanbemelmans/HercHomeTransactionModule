@@ -37,6 +37,8 @@
     private void ConfigureTestServices(ServiceCollection aServiceCollection)
     {
       aServiceCollection.AddSingleton<TestServer>();
+      aServiceCollection.AddMvc();
+      aServiceCollection.AddMvc().AddNewtonsoftJson();
       aServiceCollection.Scan(aTypeSourceSelector => aTypeSourceSelector
         // Start with all non abstract types in this assembly
         .FromAssemblyOf<TestingConvention>()

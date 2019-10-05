@@ -9,10 +9,12 @@
   using System;
   using System.Collections.Generic;
   using System.Net.Http;
+  using System.Text.Json;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
   using TransactionProject.Server.Integration.Tests.Infrastructure;
   using TransactionProject.Server.Services.JuliesApi;
+  using TypeSupport.Extensions;
 
   internal class ReturnTransactionsOnASingleAssetTests
   {
@@ -35,21 +37,33 @@
       var serializedListOfTransactions = new List<AssetTransactionDto>();
       //Act
       //object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
-      JObject response = await JuliesApi.SendJsonAsync<JObject>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
+      object response = await JuliesApi.SendJsonAsync<object>(HttpMethod.Get, ReturnTransactionsOnASingleAssetApiRequest.GetAssetTransactionsEndpoint, getAllTransactionsRequest);
       //Assert
       response.ShouldNotBe(null);
+      string stringResponse = response.ToString();
 
-      //string responseStringified = response.ToString();
+      var docFromString = JsonDocument.Parse(stringResponse);
 
-      foreach (KeyValuePair<string, JToken> trans in response)
+      foreach (JsonProperty trans in docFromString.RootElement.EnumerateObject())
       {
-        serializedListOfTransactions.Add(new AssetTransactionDto
+        var FirstTransaction = new AssetTransactionDto
         {
-          TransactionKey = trans.Key,
-          Transaction = JsonConvert.DeserializeObject<Transaction>(trans.Value.ToString())
-        });
+          TransactionKey = trans.Name,
+         Transaction.Header = trans.GetProperty("header"),
+
+
       }
-      serializedListOfTransactions.Count.ShouldBeGreaterThan(2);
+      }
+
+      //  foreach (KeyValuePair<string, JToken> trans in response)
+      //  {
+      //    serializedListOfTransactions.Add(new AssetTransactionDto
+      //    {
+      //      TransactionKey = trans.Key,
+      //      Transaction = JsonConvert.DeserializeObject<Transaction>(trans.Value.ToString())
+      //    });
+      //  }
+      //  serializedListOfTransactions.Count.ShouldBeGreaterThan(2);
     }
 
     //public async Task ShouldGetAllTransactionsFromService()
