@@ -4,11 +4,11 @@
 
   public class ReturnSingleAssetTransactionResponse
   {
-    public SingleAssetHeaderDto SingleTransaction { get; set; }
+    public Transaction SingleTransaction { get; set; }
 
     public ReturnSingleAssetTransactionResponse()
     {
-      SingleTransaction = new SingleAssetHeaderDto();
+      SingleTransaction = new Transaction();
     }
   }
 }

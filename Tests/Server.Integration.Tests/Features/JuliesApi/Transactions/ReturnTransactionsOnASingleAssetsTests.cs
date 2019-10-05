@@ -112,28 +112,32 @@
       };
 
       //Act
-      AssetTransactionDto singleTransaction = await JuliesApi.SendJsonAsync<AssetTransactionDto>(HttpMethod.Get, ReturnSingleAssetTransactionApiRequest.ReturnSingleAssetTransactionEndpoint, getSingleTransactionsRequest);
+      Transaction singleTransaction = await JuliesApi.SendJsonAsync<Transaction>(HttpMethod.Get, ReturnSingleAssetTransactionApiRequest.ReturnSingleAssetTransactionEndpoint, getSingleTransactionsRequest);
 
       //Assert
       singleTransaction.ShouldNotBeNull();
+      singleTransaction.Header.AssetId.ShouldNotBeNull();
 
     }
-    //public async Task ShouldGetSingleAsset()
-    //{
-    //  // Arrange
-    //  var getSingleAssetRequest = new ReturnSingleAssetRequest
-    //  {
-    //    AssetKey = "-LpAAEgyzH-3wInbcYCM"
-    //  };
+    public async Task ShouldGetSingleTransactionFromService()
+    {
+      // Arrange
+      var getSingleTransactionsRequest = new ReturnSingleAssetTransactionRequest
+      {
+        assetKey = "-LeFCweEsr2wZvEsWGkY",
+        timestamp = 1557675299267
+      };
 
-    //  //Act
-    //  ReturnSingleAssetResponse getSingleAssetResponse =
-    //    await Mediator.Send(getSingleAssetRequest);
+      //Act
+      ReturnSingleAssetTransactionResponse getSingleTransactionResponse =
+        await Mediator.Send(getSingleTransactionsRequest);
 
-    //  //Assert
-    //  getSingleAssetResponse.SingleAsset.ShouldBeOfType<AssetDefinitionDto>();
-    //  getSingleAssetResponse.SingleAsset.Transactions.Count.ShouldBeGreaterThan(0);
-    //}
+      //Assert
+      getSingleTransactionResponse.SingleTransaction.ShouldBeOfType<Transaction>();
+      getSingleTransactionResponse.SingleTransaction.Header.AssetId.ShouldNotBeNull();
+    }
+
+
     //  public async Task ShouldGetAllAssetTransactions()
     //  {
     //    // Arrange

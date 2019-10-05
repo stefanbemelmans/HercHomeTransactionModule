@@ -2,6 +2,7 @@
 {
   using MediatR;
   using Microsoft.AspNetCore.Components;
+  using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
   using TransactionProject.Api.Features.JuliesApi;
@@ -21,9 +22,17 @@
       CancellationToken aCancellationToken
       )
     {
-      ReturnSingleAssetTransactionResponse aReturnSingleAssetTransactionResponse = await JuliesApi.GetJsonAsync<ReturnSingleAssetTransactionResponse>(ReturnSingleAssetTransactionApiRequest.Route);
+      Transaction singleTransaction = await JuliesApi.SendJsonAsync<Transaction>(
+        HttpMethod.Get,
+        ReturnSingleAssetTransactionApiRequest.ReturnSingleAssetTransactionEndpoint,
+        new ReturnSingleAssetTransactionRequest
+        {
+          assetKey = aReturnSingleAssetTransactionRequest.assetKey,
+          timestamp = aReturnSingleAssetTransactionRequest.timestamp
+        }
+        );
 
-      return new ReturnSingleAssetTransactionResponse { SingleTransaction = aReturnSingleAssetTransactionResponse.SingleTransaction };
+      return new ReturnSingleAssetTransactionResponse { SingleTransaction = singleTransaction };
     }
   }
 }

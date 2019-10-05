@@ -44,7 +44,7 @@ namespace TransactionProject.Api.Features.JuliesApi
     public string AssetId { get; set; }
 
     [JsonPropertyName("dTime")]
-    public DateTime DTime { get; set; }
+    public string DTime { get; set; }
 
     [JsonPropertyName("factomEntry")]
     public string FactomEntry { get; set; }
