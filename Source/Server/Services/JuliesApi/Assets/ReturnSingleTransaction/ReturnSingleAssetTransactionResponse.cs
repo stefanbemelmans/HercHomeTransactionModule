@@ -4,11 +4,11 @@
 
   public class ReturnSingleAssetTransactionResponse
   {
-    public Transaction SingleTransaction { get; set; }
+    public SingleTransaction SingleTransaction { get; set; }
 
     public ReturnSingleAssetTransactionResponse()
     {
-      SingleTransaction = new Transaction();
+      SingleTransaction = new SingleTransaction();
     }
   }
 }

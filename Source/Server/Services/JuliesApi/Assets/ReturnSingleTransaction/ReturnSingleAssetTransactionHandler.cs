@@ -22,7 +22,7 @@
       CancellationToken aCancellationToken
       )
     {
-      Transaction singleTransaction = await JuliesApi.SendJsonAsync<Transaction>(
+      SingleTransaction singleTransaction = await JuliesApi.SendJsonAsync<SingleTransaction>(
         HttpMethod.Get,
         ReturnSingleAssetTransactionApiRequest.ReturnSingleAssetTransactionEndpoint,
         new ReturnSingleAssetTransactionRequest
